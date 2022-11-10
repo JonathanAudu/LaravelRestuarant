@@ -110,36 +110,28 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">DASHBOARD</span>
+                                <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
-                                aria-expanded="false">
-                                <i class="far fa-address-book" aria-hidden="true"></i>
-                                <span class="hide-menu">USERS</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
-                                aria-expanded="false">
-                                <i class="fas fa-list-ul" aria-hidden="true"></i>
-                                <span class="hide-menu">MENU</span>
-                            </a>
-                        </li>
-
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">CATEGORIES</span>
+                                <span class="hide-menu">Add Menu</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                                aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Add Categories</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                                 aria-expanded="false">
                                 <i class="fas fa-beer" aria-hidden="true"></i>
-                                <span class="hide-menu">DRINKS</span>
+                                <span class="hide-menu">Add Drinks</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -168,162 +160,34 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info bg-success">
-                            <h3 class="box-title">USERS</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li>
-                                    <div>
-                                        <i class="far fa-address-book   " aria-hidden="true" >    ALL USERS</i>
-                                    </div>
-                                </li>
-                                <li class="ms-auto">
-                                    <span class="counter text-dark">659</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info bg-primary">
-                            <h3 class="box-title">MENUS</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li>
-                                    <div>
-                                        <i class="fas fa-list-ul  " aria-hidden="true" >  MENU ITEMS</i>
-                                    </div>
-                                </li>
-                                <li class="ms-auto">
-                                    <span class="counter text-dark">869</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="white-box analytics-info bg-warning">
-                            <h3 class="box-title">DRINKS</h3>
-                            <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li>
-                                    <li>
-                                        <div>
-                                            <i class="fas fa-coffee " aria-hidden="true" >  COCKTAILS  $  WINES</i>
-                                        </div>
-                                    </li>
-                                </li>
-                                <li class="ms-auto">
-                                    <span class="counter text-dark">911</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Users Table</strong></h3>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Username</th>
-                                            <th class="border-top-0">Emails</th>
-                                            <th class="border-top-0">Phone Numbers</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>JJJJJJ</td>
-                                            <td>example@email.com</td>
-                                            <td>+12345678901</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Menu Table</strong></h3>
-                            <button><a href="">Add Menu</a></button>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item</th>
-                                            <th class="border-top-0">Description</th>
-                                            <th class="border-top-0">Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Deshmukh</td>
-                                            <td>Deshmukh</td>
-                                            <td>$25</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Categories Table</strong></h3>
-                            <button><a href="">Add Categories</a></button>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item categories</th>
-                                            <th class="border-top-0">Description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Snacks</td>
-                                            <td>cookies and vanilla</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Drinks Table</strong></h3>
-                            <button><a href="">Add Drinks</a></button>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item name</th>
-                                            <th class="border-top-0">Description</th>
-                                            <th class="border-top-0">Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Four Cousins</td>
-                                            <td>An Alcoholic drink </td>
-                                            <td>$4500.00</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title"><strong>Menu Table</strong></h3>
+                        <button><a href="">Add Menu</a></button>
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th class="border-top-0">No.</th>
+                                        <th class="border-top-0">Item</th>
+                                        <th class="border-top-0">Description</th>
+                                        <th class="border-top-0">Price</th>
+                                        <th class="border-top-0">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>JJJJJJ</td>
+                                        <td>example@email.com</td>
+                                        <td>$333</td>
+                                        <td><a href=""><button>ADD</button></a>
+                                            <a href=""><button>DELETE</button></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

@@ -15,13 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('Admin.dashboard');
+Route::get('/', function () {
+    return view('Home');
 });
+// Register Route
+Route::get('/registerpage', [AuthController::class, 'registerPage']);
+Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/',[HomeController::class, 'index']);
-Route::get('/login',[AuthController::class, 'login']);
-Route::get('/signup',[AuthController::class, 'register']);
+// Login Page
+Route::get('/loginPage', [AuthController::class, 'loginPage']);
+Route::post('/login', [AuthController::class, 'login']);
+
+// logout
+Route::get('/logout',[AuthController::class, 'logout']);
+
+
+
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
+
+});
 
 
 

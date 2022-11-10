@@ -56,8 +56,8 @@
             <nav id="navbar" class="navbar order-last order-lg-4">
                 <ul>
                     <li><a class="nav-link scrollto" href="{{"/"}}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="{{"/login"}}">Login</a></li>
-                    <li><a class="nav-link scrollto active" href="{{"/signup"}}">Register</a></li>
+                    <li><a class="nav-link scrollto" href="{{"/loginPage"}}">Login</a></li>
+                    <li><a class="nav-link scrollto active" href="{{"/registerpage"}}">Register</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -74,7 +74,7 @@
             <div class="text-center mt-4 name">
                 Create Account
             </div>
-            <form action="" method="POST" class="p-3 mt-3">
+            <form action="{{'/register'}}" method="POST" class="p-3 mt-3">
                 @csrf
                 <div class="form-field d-flex align-items-center">
                     <span class="far fa-user"></span>
@@ -92,10 +92,10 @@
                     <span class="fas fa-key"></span>
                     <input type="password" name="password" placeholder="Password">
                 </div>
-                <button class="btn mt-3">SignUp</button>
+                <button type="submit" class="btn mt-3">SignUp</button>
             </form>
             <div class="text-center fs-6">
-                <a href="{{"/login"}}">Have an Account? <strong>LOGIN</strong></a></>
+                <a href="{{"/loginPage"}}">Have an Account? <strong>LOGIN</strong></a></>
             </div>
         </div>
 

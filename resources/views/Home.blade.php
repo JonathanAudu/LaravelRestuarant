@@ -60,8 +60,8 @@
                     <li><a class="nav-link scrollto" href="#events">Events</a></li>
                     <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="{{"/login"}}">Login</a></li>
-                    <li><a class="nav-link scrollto" href="{{"/signup"}}">Register</a></li>
+                    <li><a class="nav-link scrollto" href="{{"/loginPage"}}">Login</a></li>
+                    <li><a class="nav-link scrollto" href="{{"/registerpage"}}">Register</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

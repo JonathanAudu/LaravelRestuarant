@@ -76,22 +76,47 @@
             </div>
             <form action="{{'/register'}}" method="POST" class="p-3 mt-3">
                 @csrf
+                <span class="text-danger">
+                    @error('username')
+                    {{$message}}
+                    @enderror
+                </span>
                 <div class="form-field d-flex align-items-center">
                     <span class="far fa-user"></span>
                     <input type="text" name="username" placeholder="username">
                 </div>
+
+
+                <span class="text-danger">
+                    @error('email')
+                    {{$message}}
+                    @enderror
+                </span>
                 <div class="form-field d-flex align-items-center">
                     <span class="far fa-user"></span>
                     <input type="email" name="email" placeholder="Email">
                 </div>
+
+                <span class="text-danger">
+                    @error('phone_number')
+                    {{$message}}
+                    @enderror
+                </span>
                 <div class="form-field d-flex align-items-center">
                     <span class="fas fa-key"></span>
                     <input type="tel" name="phone_number" placeholder="Phone Number">
                 </div>
+
+                <span class="text-danger">
+                    @error('password')
+                    {{$message}}
+                    @enderror
+                </span>
                 <div class="form-field d-flex align-items-center">
                     <span class="fas fa-key"></span>
                     <input type="password" name="password" placeholder="Password">
                 </div>
+
                 <button type="submit" class="btn mt-3">SignUp</button>
             </form>
             <div class="text-center fs-6">

@@ -123,10 +123,10 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/logout"
                                 aria-expanded="false">
                                 <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Blank Page</span>
+                                <span class="hide-menu">LOGOUT</span>
                             </a>
                         </li>
                     </ul>
@@ -141,9 +141,11 @@
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
-                            <h2><a href="{{'/'}}"> HOME </a></h2>
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="#" class="fw-normal"><strong>ADMIN</strong></a></li>
+                                <li><a href="{{'/'}}" class="fw-normal"> <strong>HOME</strong> </a></li>
+                            </ol>
+                            <ol class="breadcrumb ms-auto">
+                                <li><a href="#" class="fw-normal"> <strong>ADMIN</strong></a></li>
                             </ol>
                         </div>
                     </div>

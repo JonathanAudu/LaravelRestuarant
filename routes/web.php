@@ -31,7 +31,7 @@ Route::get('/logout',[AuthController::class, 'logout']);
 
 
 
-Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
+Route::middleware(['auth', 'isAdmin'])->group(function(){
 
     Route::get('/dashboard', [HomeController::class, 'index']);
 });

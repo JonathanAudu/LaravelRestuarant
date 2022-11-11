@@ -75,16 +75,27 @@
                 Welcome
             </div>
             <form action="{{ '/login' }}" method="POST" class="p-3 mt-3">
-                @if (session('message'))
-                <div class="alert alert-warning" role="alert">
-
+                @if (session('success'))
+                <div class="alert alert-info" role="alert">
+                    {{session('success')}}
                 </div>
                 @endif
                 @csrf
+                <span class="text-danger">
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                </span>
                 <div class="form-field d-flex align-items-center">
                     <span class="far fa-user"></span>
                     <input type="email" name="email" placeholder="Email">
                 </div>
+
+                <span class="text-danger">
+                    @error('password')
+                        {{ $message }}
+                    @enderror
+                </span>
                 <div class="form-field d-flex align-items-center">
                     <span class="fas fa-key"></span>
                     <input type="password" name="password" placeholder="Password">
@@ -92,8 +103,8 @@
                 <button type="submit" class="btn mt-3">Login</button>
             </form>
             <div class="text-center fs-6">
-                <a href="#">Forget password?</a> <strong><span>or <a href="{{ '/signup' }}">Sign
-                            up</a></span></strong>
+                <a href="#">Forget password?</a> <strong><span>or <a
+                            href="{{ '/signup' }}">Signup</a></span></strong>
             </div>
         </div>
 

@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +33,7 @@ Route::get('/logout',[AuthController::class, 'logout']);
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
 
+    Route::get('/dashboard', [HomeController::class, 'index']);
 });
 
 

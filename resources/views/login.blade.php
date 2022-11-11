@@ -55,9 +55,9 @@
 
             <nav id="navbar" class="navbar order-last order-lg-4">
                 <ul>
-                    <li><a class="nav-link scrollto" href="{{"/"}}">Home</a></li>
-                    <li><a class="nav-link scrollto active" href="{{"/loginPage"}}">Login</a></li>
-                    <li><a class="nav-link scrollto" href="{{"/registerpage"}}">SignUp</a></li>
+                    <li><a class="nav-link scrollto" href="{{ '/' }}">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="{{ '/loginPage' }}">Login</a></li>
+                    <li><a class="nav-link scrollto" href="{{ '/registerpage' }}">SignUp</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -74,7 +74,12 @@
             <div class="text-center mt-4 name">
                 Welcome
             </div>
-            <form action="{{'/login'}}" method="POST" class="p-3 mt-3">
+            <form action="{{ '/login' }}" method="POST" class="p-3 mt-3">
+                @if (session('message'))
+                <div class="alert alert-warning" role="alert">
+
+                </div>
+                @endif
                 @csrf
                 <div class="form-field d-flex align-items-center">
                     <span class="far fa-user"></span>
@@ -87,7 +92,8 @@
                 <button type="submit" class="btn mt-3">Login</button>
             </form>
             <div class="text-center fs-6">
-                <a href="#">Forget password?</a> <strong><span>or <a href="{{"/signup"}}">Sign up</a></span></strong>
+                <a href="#">Forget password?</a> <strong><span>or <a href="{{ '/signup' }}">Sign
+                            up</a></span></strong>
             </div>
         </div>
 

@@ -17,15 +17,14 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()){
-            if(Auth::user()->user_role == '1'){
+        if (Auth::check()) {
+            if (Auth::user()->user_role == '1') {
                 return $next($request);
-            }else{
+            } else {
                 return redirect('/')->with('message', 'For Admins Only');
             }
-        }else{
-          return redirect('/login')->with('message', 'Please Login First');
+        } else {
+            return redirect('/login')->with('message', 'Please Login First');
         }
-
     }
 }

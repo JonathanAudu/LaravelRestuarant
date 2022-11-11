@@ -38,7 +38,7 @@ class AuthController extends Controller
         $savedUser = $user->save();
 
         if($savedUser){
-            return redirect('/loginPage')->with('message', 'Registration Successful');
+            return redirect('/loginPage')->with('message', 'Registration Successful Please login');
         }else{
             return back()->with('failed', ' Registration Failed');
         }

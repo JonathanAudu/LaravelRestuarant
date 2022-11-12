@@ -65,76 +65,79 @@
     </header><!-- End Header -->
     <footer id="footer">
 
+        <div class="d-flex justify-content-center align-items-center  " style="height: 100vh">
+            <div class="">
+                <div class="wrapper">
+                    <div class="logo">
+                        <img src="\assets\img\pngtree-restaurant-logo-design-vector-template-image_388753-removebg-preview.png"
+                            alt="">
+                    </div>
+                    <div class="text-center mt-4 name">
+                        Welcome
+                    </div>
+                    <form action="{{ '/login' }}" method="POST" class="p-3 mt-3">
+                        @if (session('success'))
+                            <div class="alert alert-info" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        @csrf
+                        <span class="text-danger">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                        <div class="form-field d-flex align-items-center">
+                            <span class="far fa-user"></span>
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
 
-        <div class="wrapper">
-            <div class="logo">
-                <img src="\assets\img\pngtree-restaurant-logo-design-vector-template-image_388753-removebg-preview.png"
-                    alt="">
-            </div>
-            <div class="text-center mt-4 name">
-                Welcome
-            </div>
-            <form action="{{ '/login' }}" method="POST" class="p-3 mt-3">
-                @if (session('success'))
-                <div class="alert alert-info" role="alert">
-                    {{session('success')}}
-                </div>
-                @endif
-                @csrf
-                <span class="text-danger">
-                    @error('email')
-                        {{ $message }}
-                    @enderror
-                </span>
-                <div class="form-field d-flex align-items-center">
-                    <span class="far fa-user"></span>
-                    <input type="email" name="email" placeholder="Email">
+                        <span class="text-danger">
+                            @error('password')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                        <div class="form-field d-flex align-items-center">
+                            <span class="fas fa-key"></span>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn mt-3">Login</button>
+                    </form>
+                    <div class="text-center fs-6">
+                        <a href="#">Forget password?</a> <strong><span>or <a
+                                    href="{{ '/registerpage' }}">Signup</a></span></strong>
+                    </div>
                 </div>
 
-                <span class="text-danger">
-                    @error('password')
-                        {{ $message }}
-                    @enderror
-                </span>
-                <div class="form-field d-flex align-items-center">
-                    <span class="fas fa-key"></span>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-                <button type="submit" class="btn mt-3">Login</button>
-            </form>
-            <div class="text-center fs-6">
-                <a href="#">Forget password?</a> <strong><span>or <a
-                            href="{{ '/signup' }}">Signup</a></span></strong>
+
+
+
+
+                <footer id="footer">
+                    <div class="container">
+                        <h3>Merilyn Delicious</h3>
+                        <div class="copyright">
+                            &copy; Copyright <strong><span>Merilyn Delicious</span></strong>. All Rights Reserved
+                        </div>
+                        <div class="credits">
+                            Designed by <a href="">JonLee</a>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
 
-        <div class="container">
-            <h3>Merilyn Delicious</h3>
-            <div class="copyright">
-                &copy; Copyright <strong><span>Merilyn Delicious</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                Designed by <a href="">JonLee</a>
-            </div>
-        </div>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
 
-
-
-
-    </footer><!-- End Footer -->
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
 
 </body>
 

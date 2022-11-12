@@ -56,20 +56,21 @@ class AuthController extends Controller
             $email = $request->email,
             $password = $request->password,
         ]);
-
-        if (Auth::attempt(['email' => $email, 'password'=>$password,  'user_role' => 1])) {
+        $loggedUser = User::where('email', $request->email)->get();
+        if (Auth::attempt(['email' => $email, 'password' => $password,  'user_role' => 1])) {
             $request->session()->regenerate();
-
+            $request->session()->put('loginId', $loggedUser[0]->id);
             return redirect('/dashboard')->with('success', 'Welcome Admin');
 
-        } elseif (Auth::attempt(['email' => $email, 'password'=>$password, 'user_role' => 0])) {
+        } elseif (Auth::attempt(['email' => $email, 'password' => $password, 'user_role' => 0])) {
             $request->session()->regenerate();
-
+            $request->session()->put('loginId', $loggedUser[0]->id);
             return redirect('/');
+            
         } else {
 
             return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
+                'email' => 'The provided email do not match our records.',
                 'password' => 'Incorrect Password'
             ]);
         }
@@ -78,19 +79,19 @@ class AuthController extends Controller
 
 
     /**
- * Log the user out of the application.
- *
- * @param  \Illuminate\Http\Request  $request
- * @return \Illuminate\Http\Response
- */
-public function logout(Request $request)
-{
-    Auth::logout();
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
 
-    $request->session()->invalidate();
+        $request->session()->invalidate();
 
-    $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-    return redirect('/');
-}
+        return redirect('/');
+    }
 }

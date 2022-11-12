@@ -54,14 +54,18 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{"/"}}">Home</a></li>
+                    <li><a class="nav-link scrollto active" href="{{ '/' }}">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
                     <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
                     <li><a class="nav-link scrollto" href="#events">Events</a></li>
                     <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="{{"/loginPage"}}">Login</a></li>
-                    <li><a class="nav-link scrollto" href="{{"/registerpage"}}">Register</a></li>
+                    @if (session()->has('loginId'))
+                        <li><a class="nav-link scrollto" href="{{ '/logout' }}">Logout</a></li>
+                    @else
+                        <li><a class="nav-link scrollto" href="{{ '/loginPage' }}">Login</a></li>
+                        <li><a class="nav-link scrollto" href="{{ '/registerpage' }}">Register</a></li>
+                    @endif
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -723,77 +727,7 @@
                 </div>
 
             </div>
-        </section><!-- End Gallery Section -->
-
-        <!-- ======= Chefs Section ======= -->
-        {{-- <section id="chefs" class="chefs">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Our Proffesional <span>Chefs</span></h2>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="assets/img/chefs/chefs-1.jpg" class="img-fluid"
-                                    alt=""></div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Master Chef</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="assets/img/chefs/chefs-2.jpg" class="img-fluid"
-                                    alt=""></div>
-                            <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Patissier</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="assets/img/chefs/chefs-3.jpg" class="img-fluid"
-                                    alt=""></div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>Cook</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Chefs Section --> --}}
-
-        <!-- ======= Contact Section ======= -->
+        </section>
         <section id="contact" class="contact">
             <div class="container">
 
@@ -803,13 +737,6 @@
                         atque vitae autem.</p>
                 </div>
             </div>
-
-            {{-- <div class="map">
-                <iframe style="border:0; width: 100%; height: 350px;"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                    frameborder="0" allowfullscreen></iframe>
-            </div> --}}
-
             <div class="container mt-5">
 
                 <div class="info-wrap">
@@ -869,7 +796,7 @@
             </div>
         </section><!-- End Contact Section -->
 
-    </main><!-- End #main -->
+    </main>
 
     <!-- ======= Footer ======= -->
     <footer id="footer">

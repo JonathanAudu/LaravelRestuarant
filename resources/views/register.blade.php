@@ -55,9 +55,9 @@
 
             <nav id="navbar" class="navbar order-last order-lg-4">
                 <ul>
-                    <li><a class="nav-link scrollto" href="{{"/"}}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="{{"/loginPage"}}">Login</a></li>
-                    <li><a class="nav-link scrollto active" href="{{"/registerpage"}}">Register</a></li>
+                    <li><a class="nav-link scrollto" href="{{ '/' }}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{{ '/loginPage' }}">Login</a></li>
+                    <li><a class="nav-link scrollto active" href="{{ '/registerpage' }}">Register</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -65,92 +65,97 @@
     </header><!-- End Header -->
     <footer id="footer">
 
+        <div class="d-flex justify-content-center align-items-center  " style="height: 100vh">
+            <div class="">
 
-        <div class="wrapper">
-            <div class="logo">
-                <img src="\assets\img\pngtree-restaurant-logo-design-vector-template-image_388753-removebg-preview.png"
-                    alt="">
-            </div>
-            <div class="text-center mt-4 name">
-                Create Account
-            </div>
-            <form action="{{'/register'}}" method="POST" class="p-3 mt-3">
-                @csrf
-                <span class="text-danger">
-                    @error('username')
-                    {{$message}}
-                    @enderror
-                </span>
-                <div class="form-field d-flex align-items-center">
-                    <span class="far fa-user"></span>
-                    <input type="text" name="username" placeholder="username">
+                <div class="wrapper">
+                    <div class="logo">
+                        <img src="\assets\img\pngtree-restaurant-logo-design-vector-template-image_388753-removebg-preview.png"
+                            alt="">
+                    </div>
+                    <div class="text-center mt-4 name">
+                        Create Account
+                    </div>
+                    <form action="{{ '/register' }}" method="POST" class="p-3 mt-3">
+                        @csrf
+                        <span class="text-danger">
+                            @error('username')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                        <div class="form-field d-flex align-items-center">
+                            <span class="far fa-user"></span>
+                            <input type="text" name="username" placeholder="username">
+                        </div>
+
+
+                        <span class="text-danger">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                        <div class="form-field d-flex align-items-center">
+                            <span class="far fa-user"></span>
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+
+                        <span class="text-danger">
+                            @error('phone_number')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                        <div class="form-field d-flex align-items-center">
+                            <span class="fas fa-key"></span>
+                            <input type="tel" name="phone_number" placeholder="Phone Number">
+                        </div>
+
+                        <span class="text-danger">
+                            @error('password')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                        <div class="form-field d-flex align-items-center">
+                            <span class="fas fa-key"></span>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+
+                        <button type="submit" class="btn mt-3">SignUp</button>
+                    </form>
+                    <div class="text-center fs-6">
+                        <a href="{{ '/loginPage' }}">Have an Account? <strong>LOGIN</strong></a></>
+                    </div>
                 </div>
 
 
-                <span class="text-danger">
-                    @error('email')
-                    {{$message}}
-                    @enderror
-                </span>
-                <div class="form-field d-flex align-items-center">
-                    <span class="far fa-user"></span>
-                    <input type="email" name="email" placeholder="Email">
-                </div>
 
-                <span class="text-danger">
-                    @error('phone_number')
-                    {{$message}}
-                    @enderror
-                </span>
-                <div class="form-field d-flex align-items-center">
-                    <span class="fas fa-key"></span>
-                    <input type="tel" name="phone_number" placeholder="Phone Number">
-                </div>
 
-                <span class="text-danger">
-                    @error('password')
-                    {{$message}}
-                    @enderror
-                </span>
-                <div class="form-field d-flex align-items-center">
-                    <span class="fas fa-key"></span>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
 
-                <button type="submit" class="btn mt-3">SignUp</button>
-            </form>
-            <div class="text-center fs-6">
-                <a href="{{"/loginPage"}}">Have an Account? <strong>LOGIN</strong></a></>
+
+                <footer id="footer">
+                    <div class="container">
+                        <h3>Merilyn Delicious</h3>
+                        <div class="copyright">
+                            &copy; Copyright <strong><span>Merilyn Delicious</span></strong>. All Rights Reserved
+                        </div>
+                        <div class="credits">
+                            Designed by <a href="">JonLee</a>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
 
-        <div class="container">
-            <h3>Merilyn Delicious</h3>
-            <div class="copyright">
-                &copy; Copyright <strong><span>Merilyn Delicious</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                Designed by <a href="">JonLee</a>
-            </div>
-        </div>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
 
-
-
-
-    </footer><!-- End Footer -->
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
 
 </body>
 

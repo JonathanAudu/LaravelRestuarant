@@ -66,12 +66,12 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $request->session()->put('loginId', $loggedUser[0]->id);
             return redirect('/');
-            
+
         } else {
 
             return back()->withErrors([
-                'email' => 'The provided email do not match our records.',
-                'password' => 'Incorrect Password'
+                'email' => 'The provided details do not match our records.',
+                // 'password' => 'Incorrect Password'
             ]);
         }
     }

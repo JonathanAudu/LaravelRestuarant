@@ -24,7 +24,7 @@ class AdminMiddleware
                 return redirect('/')->with('message', 'For Admins Only');
             }
         } else {
-            return redirect('/login')->with('message', 'Please Login First');
+            return redirect('/loginpage')->with('message', 'Please Login First');
         }
     }
 }

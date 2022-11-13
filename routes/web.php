@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,11 @@ Route::get('/logout',[AuthController::class, 'logout']);
 Route::middleware(['auth', 'isAdmin'])->group(function(){
 
     Route::get('/dashboard', [HomeController::class, 'index']);
+
+
+    Route::get('/Menu', [MenuController::class, 'index']);
+    Route::get('/addmenu', [MenuController::class, 'create']);
+
 });
 
 

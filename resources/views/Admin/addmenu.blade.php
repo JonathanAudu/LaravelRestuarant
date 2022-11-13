@@ -87,13 +87,13 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">DASHBOARD</span>
                             </a>
                         </li>
-                         <li class="sidebar-item">
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                                 aria-expanded="false">
                                 <i class="far fa-address-book" aria-hidden="true"></i>
@@ -101,7 +101,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Menu"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                                 aria-expanded="false">
                                 <i class="fas fa-list-ul" aria-hidden="true"></i>
                                 <span class="hide-menu">MENU</span>
@@ -142,7 +142,7 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="{{'/'}}" class="fw-normal"> <strong>HOME</strong> </a></li>
+                                <li><a href="{{ '/' }}" class="fw-normal"> <strong>HOME</strong> </a></li>
                             </ol>
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal"> <strong>ADMIN</strong></a></li>
@@ -159,7 +159,7 @@
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
                                     <div>
-                                        <i class="far fa-address-book   " aria-hidden="true" >    ALL USERS</i>
+                                        <i class="far fa-address-book   " aria-hidden="true"> ALL USERS</i>
                                     </div>
                                 </li>
                                 <li class="ms-auto">
@@ -174,7 +174,7 @@
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
                                     <div>
-                                        <i class="fas fa-list-ul  " aria-hidden="true" >  MENU ITEMS</i>
+                                        <i class="fas fa-list-ul  " aria-hidden="true"> MENU ITEMS</i>
                                     </div>
                                 </li>
                                 <li class="ms-auto">
@@ -188,11 +188,11 @@
                             <h3 class="box-title">DRINKS</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
-                                    <li>
-                                        <div>
-                                            <i class="fas fa-coffee " aria-hidden="true" >  COCKTAILS  $  WINES</i>
-                                        </div>
-                                    </li>
+                                <li>
+                                    <div>
+                                        <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES</i>
+                                    </div>
+                                </li>
                                 </li>
                                 <li class="ms-auto">
                                     <span class="counter text-dark">911</span>
@@ -201,112 +201,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Users Table</strong></h3>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Username</th>
-                                            <th class="border-top-0">Emails</th>
-                                            <th class="border-top-0">Phone Numbers</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>JJJJJJ</td>
-                                            <td>example@email.com</td>
-                                            <td>+12345678901</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Menu Table</strong></h3>
-                            <button><a href="">Add Menu</a></button>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item</th>
-                                            <th class="border-top-0">Description</th>
-                                            <th class="border-top-0">Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Deshmukh</td>
-                                            <td>Deshmukh</td>
-                                            <td>$25</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Categories Table</strong></h3>
-                            <button><a href="">Add Categories</a></button>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item categories</th>
-                                            <th class="border-top-0">Description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Snacks</td>
-                                            <td>cookies and vanilla</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Drinks Table</strong></h3>
-                            <button><a href="">Add Drinks</a></button>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item name</th>
-                                            <th class="border-top-0">Description</th>
-                                            <th class="border-top-0">Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Four Cousins</td>
-                                            <td>An Alcoholic drink </td>
-                                            <td>$4500.00</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                <div class="col-lg-10 col-xlg-9 col-md-12 mx-auto">
+                    <div class="card ">
+                        <div class="card-body ">
+                            <h3 class="box-title text-center"><strong>ADD MENU LIST</strong> </h3>
+                            <form>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><strong>MENU-ITEM</strong></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><strong>ITEM-DESCRIPTION</strong></label>
+                                    <div class="col-sm-10">
+                                        <textarea rows="5" class="form-control p-2 border-2"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><strong>MENU-IMAGE</strong></label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><strong>PRICE</strong></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-4">
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-primary ">Add Menu</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

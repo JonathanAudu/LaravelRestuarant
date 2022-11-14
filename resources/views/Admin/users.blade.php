@@ -107,14 +107,14 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ '/' }}"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="menu"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Add Menu</span>
@@ -160,6 +160,55 @@
                     </div>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-12">
+                    <div class="white-box analytics-info bg-success">
+                        <h3 class="box-title">USERS</h3>
+                        <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            <li>
+                                <div>
+                                    <i class="far fa-address-book   " aria-hidden="true"> ALL USERS</i>
+                                </div>
+                            </li>
+                            <li class="ms-auto">
+                                <span class="counter text-dark">659</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="white-box analytics-info bg-primary">
+                        <h3 class="box-title">MENUS</h3>
+                        <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            <li>
+                                <div>
+                                    <i class="fas fa-list-ul  " aria-hidden="true"> MENU ITEMS</i>
+                                </div>
+                            </li>
+                            <li class="ms-auto">
+                                <span class="counter text-dark">869</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="white-box analytics-info bg-warning">
+                        <h3 class="box-title">DRINKS</h3>
+                        <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            <li>
+                            <li>
+                                <div>
+                                    <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES</i>
+                                </div>
+                            </li>
+                            </li>
+                            <li class="ms-auto">
+                                <span class="counter text-dark">911</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
@@ -175,12 +224,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>JJJJJJ</td>
-                                        <td>example@email.com</td>
-                                        <td>+12345678901</td>
-                                    </tr>
+                                    @php
+                                        $i = 1;
+                                    @endphp
+                                    @foreach ($users as $user)
+                                        <tr>
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $user->username }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->phone_number }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

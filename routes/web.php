@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,17 +30,22 @@ Route::post('/login', [AuthController::class, 'login']);
 
 // logout
 Route::get('/logout',[AuthController::class, 'logout']);
-
+// Route::get('/dashboard', [UserController::class, 'dashboardUsers']);
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
 
     Route::get('/dashboard', [HomeController::class, 'index']);
+    Route::get('/dashboard', [HomeController::class, 'display']);
 
-
+// MENU ROUTES
     Route::get('/Menu', [MenuController::class, 'index']);
     Route::get('/addmenu', [MenuController::class, 'create']);
     Route::post('/addmenu', [MenuController::class, 'store']);
+
+//USER ROUTE
+    Route::get('/users', [UserController::class, 'show']);
+
 
 });
 

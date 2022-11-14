@@ -93,8 +93,8 @@
                                 <span class="hide-menu">DASHBOARD</span>
                             </a>
                         </li>
-                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users"
                                 aria-expanded="false">
                                 <i class="far fa-address-book" aria-hidden="true"></i>
                                 <span class="hide-menu">USERS</span>
@@ -149,7 +149,7 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="{{'/'}}" class="fw-normal"> <strong>HOME</strong> </a></li>
+                                <li><a href="{{ '/' }}" class="fw-normal"> <strong>HOME</strong> </a></li>
                             </ol>
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal"> <strong>ADMIN</strong></a></li>
@@ -166,7 +166,8 @@
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
                                     <div>
-                                        <i class="far fa-address-book   " aria-hidden="true" >    ALL USERS</i>
+                                        <i class="far fa-address-book" aria-hidden="true"><a href="users">ALL
+                                                USERS</a> </i>
                                     </div>
                                 </li>
                                 <li class="ms-auto">
@@ -181,7 +182,8 @@
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
                                     <div>
-                                        <i class="fas fa-list-ul  " aria-hidden="true" >  MENU ITEMS</i>
+                                        <i class="fas fa-list-ul  " aria-hidden="true"><a href="menu">MENU
+                                                ITEMS</a> </i>
                                     </div>
                                 </li>
                                 <li class="ms-auto">
@@ -195,11 +197,11 @@
                             <h3 class="box-title">DRINKS</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
-                                    <li>
-                                        <div>
-                                            <i class="fas fa-coffee " aria-hidden="true" >  COCKTAILS  $  WINES</i>
-                                        </div>
-                                    </li>
+                                <li>
+                                    <div>
+                                        <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES</i>
+                                    </div>
+                                </li>
                                 </li>
                                 <li class="ms-auto">
                                     <span class="counter text-dark">911</span>
@@ -212,6 +214,7 @@
                     <div class="col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title"><strong>Users Table</strong></h3>
+                            <button><a href="users">View</a></button>
                             <div class="table-responsive">
                                 <table class="table text-nowrap">
                                     <thead>
@@ -223,12 +226,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>JJJJJJ</td>
-                                            <td>example@email.com</td>
-                                            <td>+12345678901</td>
-                                        </tr>
+                                        @php
+                                            $i = 1;
+                                        @endphp
+                                        @foreach ($users as $user)
+                                            <tr>
+                                                <td>{{ $i++ }}</td>
+                                                <td>{{ $user->username }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->phone_number }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -239,24 +247,32 @@
                     <div class="col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title"><strong>Menu Table</strong></h3>
-                            <button><a href="">Add Menu</a></button>
+                            <button><a href="addmenu">Add Menu</a></button>
                             <div class="table-responsive">
                                 <table class="table text-nowrap">
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item</th>
+                                            <th class="border-top-0"> Menu_item</th>
+                                            <th class="border-top-0"> Menu_image</th>
                                             <th class="border-top-0">Description</th>
                                             <th class="border-top-0">Price</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Deshmukh</td>
-                                            <td>Deshmukh</td>
-                                            <td>$25</td>
-                                        </tr>
+                                        @php
+                                            $i = 1;
+                                        @endphp
+                                        @foreach ($menus as $menu)
+                                            <tr>
+                                                <td>{{ $i++ }}</td>
+                                                <td>{{ $menu->menu_item }}</td>
+                                                <td><img src=".\uploads\menu_images\{{ $menu->menu_image }}"
+                                                        alt="" width="100px"></td>
+                                                <td>{{ $menu->item_description }}</td>
+                                                <td>{{ $menu->price }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

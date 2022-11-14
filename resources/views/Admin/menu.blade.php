@@ -226,7 +226,8 @@
                                             <tr>
                                                 <td>{{ $i++ }}</td>
                                                 <td>{{ $menu->menu_item }}</td>
-                                                <td><img src=".\uploads\menu_images\{{ $menu->menu_image}}" alt="" width="100px"></td>
+                                                <td><img src=".\uploads\menu_images\{{ $menu->menu_image }}"
+                                                        alt="" width="100px"></td>
                                                 <td>{{ $menu->item_description }}</td>
                                                 <td>{{ $menu->price }}</td>
                                                 <td>

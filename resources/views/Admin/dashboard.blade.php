@@ -123,6 +123,13 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                                aria-expanded="false">
+                                <i class="fas fa-tablet-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">CUSTOMER ORDERS</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/logout"
                                 aria-expanded="false">
                                 <i class="fa fa-columns" aria-hidden="true"></i>

@@ -215,16 +215,26 @@
                                             <th class="border-top-0"> Menu_image</th>
                                             <th class="border-top-0">Description</th>
                                             <th class="border-top-0">Price</th>
+                                            <th class="border-top-0">ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Deshmukh</td>
-                                            <td>Deshmukh</td>
-                                            <td>Deshmukh</td>
-                                            <td>$25</td>
-                                        </tr>
+                                        @php
+                                            $i = 1;
+                                        @endphp
+                                        @foreach ($menus as $menu)
+                                            <tr>
+                                                <td>{{ $i++ }}</td>
+                                                <td>{{ $menu->menu_item }}</td>
+                                                <td><img src=".\uploads\menu_images\{{ $menu->menu_image}}" alt="" width="100px"></td>
+                                                <td>{{ $menu->item_description }}</td>
+                                                <td>{{ $menu->price }}</td>
+                                                <td>
+                                                    <p><a href="">Edit</a></p>
+                                                    <p><a href="">Delete</a></p>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

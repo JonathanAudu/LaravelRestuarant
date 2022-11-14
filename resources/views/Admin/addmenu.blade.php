@@ -201,36 +201,39 @@
                         </div>
                     </div>
                 </div>
+
+                
                 <div class="col-lg-10 col-xlg-9 col-md-12 mx-auto">
                     <div class="card ">
                         <div class="card-body ">
                             <h3 class="box-title text-center"><strong>ADD MENU LIST</strong> </h3>
-                            <form>
+                            <form action="{{'/addmenu'}}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label"><strong>MENU-ITEM</strong></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="menu_item" class="form-control">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label"><strong>ITEM-DESCRIPTION</strong></label>
                                     <div class="col-sm-10">
-                                        <textarea rows="5" class="form-control p-2 border-2"></textarea>
+                                        <textarea rows="5" name="item_description" class="form-control p-2 border-2"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label"><strong>MENU-IMAGE</strong></label>
                                     <div class="col-sm-10">
-                                        <input type="file" class="form-control">
+                                        <input type="file" name="menu_image" class="form-control">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label"><strong>PRICE</strong></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="price" class="form-control">
                                     </div>
                                 </div>
 

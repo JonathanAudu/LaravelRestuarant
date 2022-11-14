@@ -44,7 +44,33 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'menu_item' => 'required|max:100',
+            'item_description' => 'required|max:255',
+            'menu_image' => 'mimes:jpg,bmp,png|nullable',
+            'price' => 'required|integer',
+        ]);
+
+        if ($request->menu_image) {
+            $file_name = 'menu_img-' . time() . '.' . $request->menu_image->extension();
+            $request->menu_image->move(public_path('/uploads/menu_images/'), $file_name);
+
+            $addMenu = new Menu;
+            $addMenu->menu_item = $request->menu_item;
+            $addMenu->item_description = $request->item_description;
+            $addMenu->menu_image = $file_name;
+            $addMenu->price = $request->price;
+            $savedMenu = $addMenu->save();
+
+            if ($savedMenu) {
+
+                return redirect()->action(
+                    [MenuController::class, 'index']
+                );
+            } else {
+                return back()->with('failed', 'Something went Wrong!! Try again');
+            }
+        }
     }
 
     /**
@@ -55,7 +81,7 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

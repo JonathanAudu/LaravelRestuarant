@@ -39,6 +39,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
 
     Route::get('/Menu', [MenuController::class, 'index']);
     Route::get('/addmenu', [MenuController::class, 'create']);
+    Route::post('/addmenu', [MenuController::class, 'store']);
 
 });
 

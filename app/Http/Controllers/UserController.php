@@ -12,11 +12,7 @@ class UserController extends Controller
         return view('Admin.users', compact('users'));
     }
 
-
-    public function dashboardUsers(){
-        $users = User::all();
-        return view('Admin.dashboard', compact('users'));
-    }
+    
 }
 
 

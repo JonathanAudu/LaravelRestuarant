@@ -44,7 +44,7 @@
                 <div class="navbar-header" data-logobg="skin6">
 
 
-                    <a class="navbar-brand" href="dashboard.html">
+                    <a class="navbar-brand" href="{{ '/' }}">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -87,39 +87,33 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ '/dashboard' }}"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">DASHBOARD</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users"
                                 aria-expanded="false">
                                 <i class="far fa-address-book" aria-hidden="true"></i>
                                 <span class="hide-menu">USERS</span>
                             </a>
                         </li>
+
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Drink"
                                 aria-expanded="false">
-                                <i class="fas fa-list-ul" aria-hidden="true"></i>
-                                <span class="hide-menu">MENU</span>
+                                <i class="fas fa-beer" aria-hidden="true"></i>
+                                <span class="hide-menu">DRINKS</span>
                             </a>
                         </li>
 
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">CATEGORIES</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
-                                aria-expanded="false">
-                                <i class="fas fa-beer" aria-hidden="true"></i>
-                                <span class="hide-menu">DRINKS</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -207,7 +201,7 @@
                             <h3 class="box-title"><strong>Menu Table</strong></h3>
                             <button><a href="addmenu">Add Menu</a></button>
                             <div class="table-responsive">
-                                <table class="table text-nowrap">
+                                <table class="table ">
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">No.</th>
@@ -231,8 +225,10 @@
                                                 <td>{{ $menu->item_description }}</td>
                                                 <td>{{ $menu->price }}</td>
                                                 <td>
-                                                    <p><a href="">Edit</a></p>
-                                                    <p><a href="">Delete</a></p>
+                                                    <p><button type="button" class="btn btn-light"><a
+                                                                href="">Edit</a></button></p>
+                                                    <p><button type="button" class="btn btn-danger"><a
+                                                                href="">Delete</a></button></p>
                                                 </td>
                                             </tr>
                                         @endforeach

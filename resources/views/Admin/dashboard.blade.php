@@ -44,7 +44,7 @@
                 <div class="navbar-header" data-logobg="skin6">
 
 
-                    <a class="navbar-brand" href="dashboard.html">
+                    <a class="navbar-brand" href="{{'/'}}">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -87,7 +87,7 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{'/dashboard'}}"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">DASHBOARD</span>
@@ -107,23 +107,23 @@
                                 <span class="hide-menu">MENU</span>
                             </a>
                         </li>
-
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">CATEGORIES</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Drink"
                                 aria-expanded="false">
                                 <i class="fas fa-beer" aria-hidden="true"></i>
                                 <span class="hide-menu">DRINKS</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
+                                aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">CATEGORIES</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
                                 aria-expanded="false">
                                 <i class="fas fa-tablet-alt" aria-hidden="true"></i>
                                 <span class="hide-menu">CUSTOMER ORDERS</span>
@@ -152,7 +152,7 @@
                                 <li><a href="{{ '/' }}" class="fw-normal"> <strong>HOME</strong> </a></li>
                             </ol>
                             <ol class="breadcrumb ms-auto">
-                                <li><a href="#" class="fw-normal"> <strong>ADMIN</strong></a></li>
+                                <li><a href="{{'/'}}" class="fw-normal"> <strong>ADMIN</strong></a></li>
                             </ol>
                         </div>
                     </div>
@@ -166,8 +166,7 @@
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
                                     <div>
-                                        <i class="far fa-address-book" aria-hidden="true"><a href="users">ALL
-                                                USERS</a> </i>
+                                        <i class="far fa-address-book  " aria-hidden="true">  ALL USERS </i>
                                     </div>
                                 </li>
                                 <li class="ms-auto">
@@ -182,8 +181,7 @@
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
                                     <div>
-                                        <i class="fas fa-list-ul  " aria-hidden="true"><a href="menu">MENU
-                                                ITEMS</a> </i>
+                                        <i class="fas fa-list-ul  " aria-hidden="true">  MENU ITEMS </i>
                                     </div>
                                 </li>
                                 <li class="ms-auto">
@@ -199,7 +197,7 @@
                                 <li>
                                 <li>
                                     <div>
-                                        <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES</i>
+                                        <i class="fas fa-coffee " aria-hidden="true">  COCKTAILS $ WINES </i>
                                     </div>
                                 </li>
                                 </li>
@@ -216,7 +214,7 @@
                             <h3 class="box-title"><strong>Users Table</strong></h3>
                             <button><a href="users">View</a></button>
                             <div class="table-responsive">
-                                <table class="table text-nowrap">
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">No.</th>
@@ -249,7 +247,7 @@
                             <h3 class="box-title"><strong>Menu Table</strong></h3>
                             <button><a href="addmenu">Add Menu</a></button>
                             <div class="table-responsive">
-                                <table class="table text-nowrap">
+                                <table class="table ">
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">No.</th>
@@ -269,8 +267,45 @@
                                                 <td>{{ $menu->menu_item }}</td>
                                                 <td><img src=".\uploads\menu_images\{{ $menu->menu_image }}"
                                                         alt="" width="100px"></td>
-                                                <td>{{ $menu->item_description }}</td>
+                                                <td >{{ $menu->item_description }} </td>
                                                 <td>{{ $menu->price }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title"><strong>Drinks Table</strong></h3>
+                            <button><a href="adddrink">Add Drinks</a></button>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">No.</th>
+                                            <th class="border-top-0"> Drink-Name</th>
+                                            <th class="border-top-0"> Drink-image</th>
+                                            <th  class="border-top-0">Drink-Description</th>
+                                            <th class="border-top-0">Drink-Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php
+                                            $i = 1;
+                                        @endphp
+                                        @foreach ($drinks as $drink)
+                                            <tr>
+                                                <td>{{ $i++ }}</td>
+                                                <td>{{ $drink->drink_name }}</td>
+                                                <td><img src=".\uploads\drink_images\{{ $drink->drink_image }}"
+                                                        alt="" width="100px"></td>
+                                                <td>{{ $drink->drink_description }}</td>
+                                                <td>{{ $drink->drink_price }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -285,7 +320,7 @@
                             <h3 class="box-title"><strong>Categories Table</strong></h3>
                             <button><a href="">Add Categories</a></button>
                             <div class="table-responsive">
-                                <table class="table text-nowrap">
+                                <table class="table ">
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">No.</th>
@@ -298,34 +333,6 @@
                                             <td>1</td>
                                             <td>Snacks</td>
                                             <td>cookies and vanilla</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"><strong>Drinks Table</strong></h3>
-                            <button><a href="">Add Drinks</a></button>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No.</th>
-                                            <th class="border-top-0">Item name</th>
-                                            <th class="border-top-0">Description</th>
-                                            <th class="border-top-0">Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Four Cousins</td>
-                                            <td>An Alcoholic drink </td>
-                                            <td>$4500.00</td>
                                         </tr>
                                     </tbody>
                                 </table>

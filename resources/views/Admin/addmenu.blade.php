@@ -44,7 +44,7 @@
                 <div class="navbar-header" data-logobg="skin6">
 
 
-                    <a class="navbar-brand" href="dashboard.html">
+                    <a class="navbar-brand" href="{{ '/' }}">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -87,41 +87,36 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{'/dashboard'}}"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">DASHBOARD</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users"
                                 aria-expanded="false">
                                 <i class="far fa-address-book" aria-hidden="true"></i>
                                 <span class="hide-menu">USERS</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
-                                aria-expanded="false">
-                                <i class="fas fa-list-ul" aria-hidden="true"></i>
-                                <span class="hide-menu">MENU</span>
-                            </a>
-                        </li>
 
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">CATEGORIES</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Drink"
                                 aria-expanded="false">
                                 <i class="fas fa-beer" aria-hidden="true"></i>
                                 <span class="hide-menu">DRINKS</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
+                                aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">CATEGORIES</span>
+                            </a>
+                        </li>
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/logout"
                                 aria-expanded="false">
@@ -202,12 +197,12 @@
                     </div>
                 </div>
 
-                
+
                 <div class="col-lg-10 col-xlg-9 col-md-12 mx-auto">
                     <div class="card ">
                         <div class="card-body ">
                             <h3 class="box-title text-center"><strong>ADD MENU LIST</strong> </h3>
-                            <form action="{{'/addmenu'}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ '/addmenu' }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label"><strong>MENU-ITEM</strong></label>

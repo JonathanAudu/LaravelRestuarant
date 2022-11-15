@@ -2,19 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Menu;
-use App\Models\User;
+use App\Models\Drink;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class MenuController extends Controller
+
+class DrinkController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth', 'isAdmin']);
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -22,8 +16,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::all();
-        return view('Admin.menu', compact('menus'));
+        $drinks = Drink::all();
+        return view('Admin.drinks', compact('drinks'));
     }
 
     /**
@@ -33,7 +27,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('Admin.addmenu');
+        return view('Admin.adddrink');
     }
 
     /**
@@ -45,27 +39,27 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'menu_item' => 'required|max:100',
-            'item_description' => 'required|max:255',
-            'menu_image' => 'mimes:jpg,bmp,png|nullable',
-            'price' => 'required|integer',
+            'drink_name' => 'required|max:100',
+            'drink_description' => 'required|max:255',
+            'drink_image' => 'mimes:jpg,bmp,png|nullable',
+            'drink_price' => 'required|integer',
         ]);
 
-        if ($request->menu_image) {
-            $file_name = 'menu_img-' . time() . '.' . $request->menu_image->extension();
-            $request->menu_image->move(public_path('/uploads/menu_images/'), $file_name);
+        if ($request->drink_image) {
+            $file_name = 'drink_img-' . time() . '.' . $request->drink_image->extension();
+            $request->drink_image->move(public_path('/uploads/drink_images/'), $file_name);
 
-            $addMenu = new Menu;
-            $addMenu->menu_item = $request->menu_item;
-            $addMenu->item_description = $request->item_description;
-            $addMenu->menu_image = $file_name;
-            $addMenu->price = $request->price;
-            $savedMenu = $addMenu->save();
+            $addDrink = new Drink;
+            $addDrink->drink_name = $request->drink_name;
+            $addDrink->drink_description = $request->drink_description;
+            $addDrink->drink_image = $file_name;
+            $addDrink->drink_price = $request->drink_price;
+            $savedDrink = $addDrink->save();
 
-            if ($savedMenu) {
+            if ($savedDrink) {
 
                 return redirect()->action(
-                    [MenuController::class, 'index']
+                    [DrinkController::class, 'index']
                 );
             } else {
                 return back()->with('failed', 'Something went Wrong!! Try again');
@@ -81,7 +75,7 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -90,10 +84,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu, $id)
+    public function edit($id)
     {
-        $menu = Menu::find($id);
-        return view('Admin.editmenu', compact('menu'));
+        //
     }
 
     /**

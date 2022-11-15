@@ -86,7 +86,7 @@ class DrinkController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

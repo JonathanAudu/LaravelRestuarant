@@ -105,7 +105,16 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = $request->id;
+        $menu = Menu::find($id);
+        $menu->menu_item = $request->menu_item;
+        $menu->item_description = $request->item_description;
+        $menu->image = $request->menu_image;
+        $menu->price = $request->price;
+        $menu->save();
+        return redirect()->action(
+
+            [MenuController::class, 'index']);
     }
 
     /**

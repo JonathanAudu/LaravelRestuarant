@@ -42,6 +42,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/Menu', [MenuController::class, 'index']);
     Route::get('/addmenu', [MenuController::class, 'create']);
     Route::post('/addmenu', [MenuController::class, 'store']);
+    Route::get('/editmenu/{id}', [MenuController::class, 'edit'])->name('editmenu');
+    Route::post('/updatemenu', [MenuController::class, 'update']);
 
 //USER ROUTE
     Route::get('/users', [UserController::class, 'show']);

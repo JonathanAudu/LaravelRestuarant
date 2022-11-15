@@ -226,7 +226,7 @@
                                                 <td>{{ $menu->price }}</td>
                                                 <td>
                                                     <p><button type="button" class="btn btn-light"><a
-                                                                href="">Edit</a></button></p>
+                                                                href="{{route('editmenu', $menu->id)}}">Edit</a></button></p>
                                                     <p><button type="button" class="btn btn-danger"><a
                                                                 href="">Delete</a></button></p>
                                                 </td>

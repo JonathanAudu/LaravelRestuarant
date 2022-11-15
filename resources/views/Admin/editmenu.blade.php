@@ -44,7 +44,7 @@
                 <div class="navbar-header" data-logobg="skin6">
 
 
-                    <a class="navbar-brand" href="{{ '/' }}">
+                    <a class="navbar-brand" href="{{ '/dashboard' }}">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
@@ -202,7 +202,7 @@
                     <div class="card ">
                         <div class="card-body ">
                             <h3 class="box-title text-center"><strong>ADD MENU LIST</strong> </h3>
-                            <form action="{{ '/' }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ '/updatemenu' }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group row">
@@ -222,7 +222,7 @@
                                     <label class="col-sm-2 col-form-label"><strong>ITEM-DESCRIPTION</strong></label>
                                     <div class="col-sm-10">
                                         <textarea rows="5" name="item_description" class="form-control p-2 border-2"
-                                            value="{{ $menu->item_description }}" placeholder="item_description"></textarea>
+                                            value="{{ $menu->item_description }}" ></textarea>
                                     </div>
                                 </div>
 

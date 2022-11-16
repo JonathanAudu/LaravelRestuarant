@@ -90,7 +90,7 @@ class CategoryController extends Controller
         $addcattegory->category_name = $request->category_name;
         $addcattegory->save();
 
-        return redirectm()->action(
+        return redirect()->action(
             [CategoryController::class, 'index']
         );
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\DrinkController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,41 +23,45 @@ Route::get('/', function () {
     return view('Home');
 });
 // Register Route
-Route::get('/registerpage', [AuthController::class, 'registerPage']);
-Route::post('/register', [AuthController::class, 'register']);
+Route::get('registerpage', [AuthController::class, 'registerPage']);
+Route::post('register', [AuthController::class, 'register']);
 
 // Login Page
-Route::get('/loginPage', [AuthController::class, 'loginPage']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::get('loginPage', [AuthController::class, 'loginPage']);
+Route::post('login', [AuthController::class, 'login']);
 
 // logout
-Route::get('/logout',[AuthController::class, 'logout']);
+Route::get('/logout', [AuthController::class, 'logout']);
 // Route::get('/dashboard', [UserController::class, 'dashboardUsers']);
 
 
-Route::middleware(['auth', 'isAdmin'])->group(function(){
+Route::middleware(['auth', 'isAdmin'])->group(function () {
 
-    Route::get('/dashboard', [HomeController::class, 'display']);
+    Route::get('dashboard', [HomeController::class, 'display']);
 
-// MENU ROUTES
-    Route::get('/Menu', [MenuController::class, 'index']);
+    // MENU ROUTES
+    Route::get('Menu', [MenuController::class, 'index']);
     Route::get('/addmenu', [MenuController::class, 'create']);
     Route::post('/addmenu', [MenuController::class, 'store']);
     Route::get('/editmenu/{id}', [MenuController::class, 'edit'])->name('editmenu');
     Route::post('/updatemenu', [MenuController::class, 'update']);
+    Route::get('/menu/delete/{id}', [MenuController::class, 'destroy'])->name('deleteMenu');
 
-//USER ROUTE
+    //USER ROUTE
     Route::get('/users', [UserController::class, 'show']);
 
 
-// DRINK ROUTE
-Route::get('/Drink', [DrinkController::class, 'index']);
-Route::get('/adddrink', [DrinkController::class, 'create']);
-Route::post('/adddrink', [DrinkController::class, 'store']);
+    // DRINK ROUTE
+    Route::get('/Drink', [DrinkController::class, 'index']);
+    Route::get('/adddrink', [DrinkController::class, 'create']);
+    Route::post('/adddrink', [DrinkController::class, 'store']);
 
 
+    // CATEGORY ROUTE
+    Route::get('Category', [CategoryController::class, 'index']);
+    Route::get('/addcategory', [CategoryController::class, 'create']);
+    Route::post('/addcategory', [CategoryController::class, 'store']);
+    Route::get('/editcategory/{id}', [CategoryController::class, 'edit'])->name('editcategory');
+    Route::post('/updatecategory', [CategoryController::class, 'update']);
+    Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('deleteCategory');
 });
-
-
-
-

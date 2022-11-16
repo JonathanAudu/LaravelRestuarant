@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Menu;
 use App\Models\User;
+use App\Models\Drink;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Drink;
 
 class HomeController extends Controller
 {
@@ -17,10 +18,11 @@ class HomeController extends Controller
 
     public function display()
     {
+        $categorys = Category::all();
         $drinks = Drink::all();
         $users = User::all();
         $menus = Menu::all();
-        return view('Admin.dashboard',compact('users','menus', 'drinks'));
+        return view('Admin.dashboard',compact('users','menus', 'drinks', 'categorys'));
     }
 
 

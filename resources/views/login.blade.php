@@ -75,7 +75,7 @@
                     <div class="text-center mt-4 name">
                         Welcome
                     </div>
-                    <form action="{{ '/login' }}" method="POST" class="p-3 mt-3">
+                    <form action="{{ 'login' }}" method="POST" class="p-3 mt-3">
                         @if (session('success'))
                             <div class="alert alert-info" role="alert">
                                 {{ session('success') }}

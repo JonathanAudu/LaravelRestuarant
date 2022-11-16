@@ -63,8 +63,8 @@
                     @if (session()->has('loginId'))
                         <li><a class="nav-link scrollto" href="{{ '/logout' }}">Logout</a></li>
                     @else
-                        <li><a class="nav-link scrollto" href="{{ '/loginPage' }}">Login</a></li>
-                        <li><a class="nav-link scrollto" href="{{ '/registerpage' }}">Register</a></li>
+                        <li><a class="nav-link scrollto" href="{{ 'loginPage' }}">Login</a></li>
+                        <li><a class="nav-link scrollto" href="{{ 'registerpage' }}">Register</a></li>
                     @endif
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -728,6 +728,7 @@
 
             </div>
         </section>
+
         <section id="contact" class="contact">
             <div class="container">
 

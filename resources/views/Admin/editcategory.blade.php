@@ -1,6 +1,5 @@
 @extends('components.admin-layout')
-
-@section('content')
+    @section('content')
     <div class="page-wrapper">
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
@@ -69,53 +68,39 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="white-box">
-                        <h3 class="box-title"><strong>Menu Table</strong></h3>
-                        <button><a href="addmenu">Add Menu</a></button>
-                        <div class="table-responsive">
-                            <table class="table ">
-                                <thead>
-                                    <tr>
-                                        <th class="border-top-0">No.</th>
-                                        <th class="border-top-0">Category</th>
-                                        <th class="border-top-0"> Menu_item</th>
-                                        <th class="border-top-0"> Menu_image</th>
-                                        <th class="border-top-0">Description</th>
-                                        <th class="border-top-0">Price</th>
-                                        <th class="border-top-0">ACTION</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($menus as $menu)
-                                        <tr>
-                                            <td>{{ $i++ }}</td>
-                                            <td>{{ $menu->category_id }}</td>
-                                            <td>{{ $menu->menu_item }}</td>
-                                            <td><img src="..\uploads\menu_images\{{ $menu->menu_image }}" alt=""
-                                                    width="100px"></td>
-                                            <td>{{ $menu->item_description }}</td>
-                                            <td>{{ $menu->price }}</td>
-                                            <td>
-                                                <p><button type="button" class="btn btn-light"><a
-                                                            href="editmenu/{{ $menu->id }}">Edit</a></button></p>
-                                                <p><button type="button" class="btn btn-danger"><a
-                                                            href="deleteMenu/{{ $menu->id }}">Delete</a></button>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+
+
+            <div class="col-lg-10 col-xlg-9 col-md-12 mx-auto">
+                <div class="card ">
+                    <div class="card-body ">
+                        <h3 class="box-title text-center"><strong>UPDATE CATEGORY</strong> </h3>
+                        <form action="{{ '/updatecategory' }}" method="POST">
+                            @csrf
+
+                            <div class="form-group row">
+                                <input type="text" name="id" class="form-control"
+                                    value="{{ $category->id }}" >
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label"><strong>CATEGORY_NAME</strong></label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="category_name" class="form-control"
+                                        value="{{ $category->category_name }}" placeholder="menu_item">
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" class="btn btn-primary ">Update Menu</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         <footer class="footer text-center">2021 © JonLee Admin</footer>
     </div>
-@endsection
+    @endsection
+

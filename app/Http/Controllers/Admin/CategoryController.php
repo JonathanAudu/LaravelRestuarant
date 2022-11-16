@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Drink;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-class DrinkController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class DrinkController extends Controller
      */
     public function index()
     {
-        $drinks = Drink::all();
-        return view('Admin.drinks', compact('drinks'));
+        $categorys = Category::all();
+        return view('Admin.categories', compact('categorys'));
     }
 
     /**
@@ -27,7 +26,7 @@ class DrinkController extends Controller
      */
     public function create()
     {
-        return view('Admin.adddrink');
+        return view('Admin.addcategory');
     }
 
     /**
@@ -39,31 +38,18 @@ class DrinkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'drink_name' => 'required|max:100',
-            'drink_description' => 'required|max:255',
-            'drink_image' => 'mimes:jpg,bmp,png|nullable',
-            'drink_price' => 'required|integer',
+            'category_name' => 'required'
         ]);
 
-        if ($request->drink_image) {
-            $file_name = 'drink_img-' . time() . '.' . $request->drink_image->extension();
-            $request->drink_image->move(public_path('/uploads/drink_images/'), $file_name);
-
-            $addDrink = new Drink;
-            $addDrink->drink_name = $request->drink_name;
-            $addDrink->drink_description = $request->drink_description;
-            $addDrink->drink_image = $file_name;
-            $addDrink->drink_price = $request->drink_price;
-            $savedDrink = $addDrink->save();
-
-            if ($savedDrink) {
-
-                return redirect()->action(
-                    [DrinkController::class, 'index']
-                );
-            } else {
-                return back()->with('failed', 'Something went Wrong!! Try again');
-            }
+        $addcattegory = new Category;
+        $addcattegory->category_name = $request->category_name;
+        $savedCategory = $addcattegory->save();
+        if ($savedCategory) {
+            return redirect()->action(
+                [CategoryController::class, 'index']
+            );
+        } else {
+            return back()->with('failed', 'Something went Wrong!! Try again');
         }
     }
 
@@ -84,9 +70,10 @@ class DrinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category, $id)
     {
-
+        $category = Category::find($id);
+        return view('Admin.editcategory', compact('category'));
     }
 
     /**
@@ -98,7 +85,14 @@ class DrinkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = $request->id;
+        $addcattegory = Category::find($id);
+        $addcattegory->category_name = $request->category_name;
+        $addcattegory->save();
+
+        return redirect()->action(
+            [CategoryController::class, 'index']
+        );
     }
 
     /**
@@ -107,8 +101,11 @@ class DrinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category, $id)
     {
-        
+        $category = Category::find($id);
+        $category->delete();
+
+        return view('Admin.categories')->with('message', ' Deleted successful');
     }
 }

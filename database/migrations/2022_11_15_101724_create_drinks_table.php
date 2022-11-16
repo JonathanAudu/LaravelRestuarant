@@ -15,6 +15,7 @@ class CreateDrinksTable extends Migration
     {
         Schema::create('drinks', function (Blueprint $table) {
             $table->id();
+            $table->integer('category_id')->unsigned();
             $table->string('drink_name');
             $table->string('drink_description');
             $table->string('drink_image');

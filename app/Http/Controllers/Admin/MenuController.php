@@ -81,7 +81,6 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**
@@ -114,7 +113,8 @@ class MenuController extends Controller
         $menu->save();
         return redirect()->action(
 
-            [MenuController::class, 'index']);
+            [MenuController::class, 'index']
+        );
     }
 
     /**
@@ -123,8 +123,13 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu, $id)
     {
-        //
+        $menu = Menu::find($id);
+        $menu->delete();
+        return redirect()->action(
+
+            [MenuController::class, 'index']
+        );
     }
 }

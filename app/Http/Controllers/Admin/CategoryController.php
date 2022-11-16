@@ -83,14 +83,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $id = $request->id;
         $addcattegory = Category::find($id);
         $addcattegory->category_name = $request->category_name;
         $addcattegory->save();
 
-        return redirect()->action(
+        return redirectm()->action(
             [CategoryController::class, 'index']
         );
     }

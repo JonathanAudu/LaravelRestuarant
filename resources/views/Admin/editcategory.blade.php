@@ -79,14 +79,14 @@
 
                             <div class="form-group row">
                                 <input type="text" name="id" class="form-control"
-                                    value="{{ $category->id }}" >
+                                    value="{{ $category->id }}" hidden>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>CATEGORY_NAME</strong></label>
                                 <div class="col-sm-10">
                                     <input type="text" name="category_name" class="form-control"
-                                        value="{{ $category->category_name }}" placeholder="menu_item">
+                                        value="{{ $category->category_name }}" placeholder="{{ $category->category_name }}">
                                 </div>
                             </div>
 

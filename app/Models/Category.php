@@ -9,12 +9,20 @@ class Category extends Model
 {
     use HasFactory;
 
+
+
+    protected $fillable = [
+        'category_name',
+    ];
+
+
+
     /**
      * Get the menus for the categories.
      */
     public function menu()
     {
-        return $this->hasMany(Menu::class);
+        return $this->hasMany(Menu::class, 'category_id', 'id');
     }
 
 

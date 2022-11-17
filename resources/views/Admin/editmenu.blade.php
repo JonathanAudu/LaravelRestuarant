@@ -74,57 +74,56 @@
                 <div class="card ">
                     <div class="card-body ">
                         <h3 class="box-title text-center"><strong>UPDATE MENU LIST</strong> </h3>
-                        <form action="{{ '/updatemenu' }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ '/updatecategory' }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
-                                <input type="text" name="id" class="form-control"
-                                    value="{{ $menu->id }}" hidden>
-                            </div>
-
-                            <div class="form-group row">
-                                <input type="text" name="id" class="form-control"
-                                    value="{{ $menu->category_id }}" hidden>
+                                <label class="col-sm-2 col-form-label"><strong>SELECT CATEGORY</strong></label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" name="category_id">
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>MENU-ITEM</strong></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="menu_item" class="form-control"
-                                        value="{{ $menu->menu_item }}" placeholder="menu_item">
+                                    <input type="text" name="menu_item" value="{{$menus->menu_item}}" placeholder="" class="form-control">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>ITEM-DESCRIPTION</strong></label>
                                 <div class="col-sm-10">
-                                    <textarea rows="5" name="item_description" class="form-control p-2 border-2">{{ $menu->item_description }} </textarea>
+                                    <textarea rows="5" name="item_description" class="form-control p-2 border-2">{{$menus->item_description}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-2">
-                                    <img src="..\uploads\menu_images\{{ $menu->menu_image }}" alt="" height="100px" width="100px">
-                                    <input type="text" name="oldpics" id="" value="{{ $menu->menu_image }} " hidden>
+                                    <img src="..\uploads\menu_images\{{ $menus->menu_image }}" alt="" height="100px" width="100px">
+                                    <input type="text" name="oldpics" id="" value="{{ $menus->menu_image }} " hidden>
                                 </div>
                                 <div class="col-sm-10">
                                     <label class="col-sm-2 col-form-label"><strong>MENU-IMAGE</strong></label>
                                     <input type="file" name="menu_image" class="form-control"
-                                        value="{{ $menu->menu_image }}">
+                                        value="{{ $menus->menu_image }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>PRICE</strong></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="price" class="form-control"
-                                        value="{{ $menu->price }}" placeholder="price">
+                                    <input type="text" name="price" value="{{$menus->price}}" class="form-control">
                                 </div>
                             </div>
 
                             <div class="form-group mb-4">
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-primary ">Update Menu</button>
+                                    <button type="submit" class="btn btn-primary "> UPDATE</button>
                                 </div>
                             </div>
                         </form>

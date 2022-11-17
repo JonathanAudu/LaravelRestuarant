@@ -70,15 +70,21 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title"><strong>Categories Table</strong></h3>
-                        <button><a href="">View Categories</a></button>
+                        <h3 class="box-title"><strong>CATEGORY DETAILS</strong>
+                            <a href="/addcategory" class="btn btn-primary float-end">Add Categories</a>
+                        </h3>
+
+                        @if (session('message'))
+                            <div class="alert alert-success">{{ session('message') }}</div>
+                        @endif
+
                         <div class="table-responsive">
-                            <table class="table text-nowrap">
+                            <table class="table">
                                 <thead>
                                     <tr>
-                                        <th class="border-top-0">No.</th>
-                                        <th class="border-top-0">Category Name</th>
-                                        <th class="border-top-0">Action</th>
+                                        <th class="border-top-0 ">No.</th>
+                                        <th class="border-top-0 text-center">Category Name</th>
+                                        <th class="border-top-0 text-end">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,13 +94,15 @@
                                     @foreach ($categorys as $category)
                                         <tr>
                                             <td>{{ $i++ }}</td>
-                                            <td>{{ $category->category_name }}</td>
+                                            <td class="text-center">{{ $category->category_name }}</td>
+                                            <td class="text-end">
+                                                <button type="button" class="btn btn-light"><a
+                                                        href="editcategory/{{ $category->id }}"> EDIT </a></button>
+                                            </td>
                                             <td>
-                                                <p><button type="button" class="btn btn-light"><a
-                                                            href="editcategory/{{ $category->id }}"> Edit </a></button></p>
-                                                <p><button type="button" class="btn btn-danger"><a
-                                                            href="deleteCategory/{{ $category->id }}">DELETE</a></button>
-                                                </p>
+                                                <button type="button" class="btn btn-danger"><a
+                                                        href="deleteCategory/{{ $category->id }}">DELETE</a></button>
+
                                             </td>
                                         </tr>
                                     @endforeach

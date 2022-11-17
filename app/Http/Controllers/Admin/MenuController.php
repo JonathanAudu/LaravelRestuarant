@@ -6,6 +6,7 @@ use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 
 class MenuController extends Controller
 {
@@ -22,6 +23,7 @@ class MenuController extends Controller
      */
     public function index()
     {
+
         $menus = Menu::all();
         return view('Admin.menu', compact('menus'));
     }
@@ -33,7 +35,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('Admin.addmenu');
+        $categories = Category::all();
+        return view('Admin.addmenu', compact('categories'));
     }
 
     /**
@@ -44,32 +47,20 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'menu_item' => 'required|max:100',
-            'item_description' => 'required|max:255',
-            'menu_image' => 'mimes:jpg,bmp,png|nullable',
-            'price' => 'required|integer',
-        ]);
+       $categories = Category::findorfail($request->category_id);
+       if ($request->menu_image) {
+        $file_name = 'menu_img-' . time() . '.' . $request->menu_image->extension();
+        $request->menu_image->move(public_path('/uploads/menu_images/'), $file_name);
 
-        if ($request->menu_image) {
-            $file_name = 'menu_img-' . time() . '.' . $request->menu_image->extension();
-            $request->menu_image->move(public_path('/uploads/menu_images/'), $file_name);
+       $categories->Menu()->create([
+        'menu_item' => $request->menu_item,
+        'item_description' => $request->item_description,
+        'menu_image' => $file_name,
+        'price' => $request->price,
 
-            $addMenu = new Menu;
-            $addMenu->menu_item = $request->menu_item;
-            $addMenu->item_description = $request->item_description;
-            $addMenu->menu_image = $file_name;
-            $addMenu->price = $request->price;
-            $savedMenu = $addMenu->save();
+       ]);
 
-            if ($savedMenu) {
-
-                return redirect()->action(
-                    [MenuController::class, 'index']
-                );
-            } else {
-                return back()->with('failed', 'Something went Wrong!! Try again');
-            }
+       return redirect('Menu')->with('message', '');
         }
     }
 
@@ -91,8 +82,9 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu, $id)
     {
-        $menu = Menu::find($id);
-        return view('Admin.editmenu', compact('menu'));
+        $categories = Category::all();
+        $menus = Menu::findorfail($id);
+        return view('Admin.editmenu', compact('categories', 'menus'));
     }
 
     /**
@@ -107,6 +99,7 @@ class MenuController extends Controller
         $id = $request->id;
         $menu = Menu::find($id);
         $menu->menu_item = $request->menu_item;
+        $menu->category_id = $request->category_id;
         $menu->item_description = $request->item_description;
         $menu->image = $request->menu_image;
         $menu->price = $request->price;
@@ -127,9 +120,7 @@ class MenuController extends Controller
     {
         $menu = Menu::find($id);
         $menu->delete();
-        return redirect()->action(
 
-            [MenuController::class, 'index']
-        );
+        return redirect('Menu')->with('denger', 'Deleted');
     }
 }

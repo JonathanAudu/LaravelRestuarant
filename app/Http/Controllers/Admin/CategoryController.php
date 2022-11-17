@@ -43,14 +43,10 @@ class CategoryController extends Controller
 
         $addcattegory = new Category;
         $addcattegory->category_name = $request->category_name;
-        $savedCategory = $addcattegory->save();
-        if ($savedCategory) {
-            return redirect()->action(
-                [CategoryController::class, 'index']
-            );
-        } else {
-            return back()->with('failed', 'Something went Wrong!! Try again');
-        }
+        $addcattegory->save();
+
+        return redirect('Category')->with('message', 'Category Added');
+
     }
 
     /**

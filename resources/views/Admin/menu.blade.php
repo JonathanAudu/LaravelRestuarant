@@ -72,19 +72,28 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title"><strong>Menu Table</strong></h3>
-                        <button><a href="addmenu">Add Menu</a></button>
+                        <h3 class="box-title"><strong>MENU DETAILS</strong>
+                            <a href="addmenu" class="btn btn-primary float-end">Add Menu</a>
+                        </h3>
+
+                        @if (session('message'))
+                            <div class="alert alert-success">{{ session('message') }}</div>
+                        @endif
+                        @if (session('denger'))
+                            <div class="alert alert-danger">{{ session('denger') }}</div>
+                        @endif
+
                         <div class="table-responsive">
                             <table class="table ">
                                 <thead>
                                     <tr>
                                         <th class="border-top-0">No.</th>
-                                        <th class="border-top-0">Category</th>
-                                        <th class="border-top-0"> Menu_item</th>
-                                        <th class="border-top-0"> Menu_image</th>
-                                        <th class="border-top-0">Description</th>
-                                        <th class="border-top-0">Price</th>
-                                        <th class="border-top-0">ACTION</th>
+                                        <th class="border-top-0 text-center">Category</th>
+                                        <th class="border-top-0 text-center"> Name</th>
+                                        <th class="border-top-0 text-center"> Image</th>
+                                        <th class="border-top-0 text-center">Description</th>
+                                        <th class="border-top-0 text-center">Price</th>
+                                        <th class="border-top-0 text-end">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -94,18 +103,18 @@
                                     @foreach ($menus as $menu)
                                         <tr>
                                             <td>{{ $i++ }}</td>
-                                            <td>{{ $menu->category_id }}</td>
+                                            <td>{{ $menu->category->category_name }}</td>
                                             <td>{{ $menu->menu_item }}</td>
                                             <td><img src="..\uploads\menu_images\{{ $menu->menu_image }}" alt=""
                                                     width="100px"></td>
                                             <td>{{ $menu->item_description }}</td>
-                                            <td>{{ $menu->price }}</td>
+                                            <td>${{ $menu->price }}</td>
                                             <td>
-                                                <p><button type="button" class="btn btn-light"><a
-                                                            href="editmenu/{{ $menu->id }}">Edit</a></button></p>
-                                                <p><button type="button" class="btn btn-danger"><a
-                                                            href="deleteMenu/{{ $menu->id }}">Delete</a></button>
-                                                </p>
+                                                <a href="editmenu/{{ $menu->id }}"
+                                                    class="btn btn-primary">Edit</a></button>
+                                            </td>
+                                            <td>
+                                                <a href="deleteMenu/{{ $menu->id }}" class="btn btn-danger">Delete</a></button>
                                             </td>
                                         </tr>
                                     @endforeach

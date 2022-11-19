@@ -60,7 +60,7 @@ class MenuController extends Controller
 
        ]);
 
-       return redirect('Menu')->with('message', '');
+       return redirect('Menu')->with('message', 'menu created');
         }
     }
 
@@ -104,10 +104,7 @@ class MenuController extends Controller
         $menu->menu_image = $request->menu_image;
         $menu->price = $request->price;
         $menu->save();
-        return redirect()->action(
-
-            [MenuController::class, 'index']
-        );
+        return redirect('Menu')->with('message', 'Deleted');
     }
 
     /**

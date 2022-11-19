@@ -110,7 +110,8 @@
                                             <td>{{ $menu->item_description }}</td>
                                             <td>${{ $menu->price }}</td>
                                             <td>
-                                                <a href="editmenu/{{ $menu->id }}"
+                                                <a href="editmenu/{{ $menu->i
+                                                d }}"
                                                     class="btn btn-primary">Edit</a></button>
                                             </td>
                                             <td>

@@ -44,7 +44,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/addmenu', [MenuController::class, 'create']);
     Route::post('/addmenu', [MenuController::class, 'store']);
     Route::get('/editmenu/{id}', [MenuController::class, 'edit'])->name('editmenu');
-    Route::post('/updatemenu', [MenuController::class, 'update']);
+    Route::post('/updatemenu/{id}', [MenuController::class, 'update']);
     Route::get('/menu/delete/{id}', [MenuController::class, 'destroy'])->name('deleteMenu');
 
     //USER ROUTE

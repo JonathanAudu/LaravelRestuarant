@@ -101,7 +101,7 @@ class MenuController extends Controller
         $menu->menu_item = $request->menu_item;
         $menu->category_id = $request->category_id;
         $menu->item_description = $request->item_description;
-        $menu->image = $request->menu_image;
+        $menu->menu_image = $request->menu_image;
         $menu->price = $request->price;
         $menu->save();
         return redirect()->action(

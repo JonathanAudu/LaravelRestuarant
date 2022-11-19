@@ -74,7 +74,7 @@
                 <div class="card ">
                     <div class="card-body ">
                         <h3 class="box-title text-center"><strong>UPDATE MENU LIST</strong> </h3>
-                        <form action="{{ '/updatecategory' }}" method="POST" enctype="multipart/form-data">
+                        <form action="/updatemenu/{{$menus->id}}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -105,7 +105,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-2">
                                     <img src="..\uploads\menu_images\{{ $menus->menu_image }}" alt="" height="100px" width="100px">
-                                    <input type="text" name="oldpics" id="" value="{{ $menus->menu_image }} " hidden>
+                                    <input type="text" name="menu_image" id="" value="{{ $menus->menu_image }} " hidden>
                                 </div>
                                 <div class="col-sm-10">
                                     <label class="col-sm-2 col-form-label"><strong>MENU-IMAGE</strong></label>

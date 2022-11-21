@@ -9,6 +9,14 @@ class Drink extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'category_id',
+        'drink_name',
+        'drink_description',
+        'drink_image',
+        'drink_price',
+    ];
+
 
      /**
      * Get the Category that owns the Drink.

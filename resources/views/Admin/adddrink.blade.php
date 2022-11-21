@@ -13,7 +13,7 @@
                             <li><a href="{{ '/' }}" class="fw-normal"> <strong>HOME</strong> </a></li>
                         </ol>
                         <ol class="breadcrumb ms-auto">
-                            <li><a href="#" class="fw-normal"> <strong>ADMIN</strong></a></li>
+                            <li><a href="/dashboard" class="fw-normal"> <strong>ADMIN</strong></a></li>
                         </ol>
                     </div>
                 </div>
@@ -77,6 +77,18 @@
                         <h3 class="box-title text-center"><strong>ADD DRINK LIST</strong> </h3>
                         <form action="{{ '/adddrink' }}" method="POST" enctype="multipart/form-data">
                             @csrf
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label"><strong>SELECT CATEGORY</strong></label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" name="category_id">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>DRINK-NAME</strong></label>
                                 <div class="col-sm-10">

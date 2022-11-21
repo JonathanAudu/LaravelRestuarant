@@ -45,7 +45,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('/addmenu', [MenuController::class, 'store']);
     Route::get('/editmenu/{id}', [MenuController::class, 'edit'])->name('editmenu');
     Route::post('/updatemenu/{id}', [MenuController::class, 'update']);
-    Route::get('/menu/delete/{id}', [MenuController::class, 'destroy'])->name('deleteMenu');
+    Route::get('/menu/delete/{id}', [MenuController::class, 'destroy']);
 
     //USER ROUTE
     Route::get('/users', [UserController::class, 'show']);
@@ -55,6 +55,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/Drink', [DrinkController::class, 'index']);
     Route::get('/adddrink', [DrinkController::class, 'create']);
     Route::post('/adddrink', [DrinkController::class, 'store']);
+    Route::get('/editdrink/{id}', [DrinkController::class, 'edit'])->name('editdrink');
+    Route::post('/updatedrink/{id}', [DrinkController::class, 'update']);
+    Route::post('/deletedrink/{id}', [DrinkController::class, 'destroy']);
 
 
     // CATEGORY ROUTE

@@ -72,18 +72,28 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title"><strong>Drinks Table</strong></h3>
-                        <button><a href="adddrink">Add Drink</a></button>
+                        <h3 class="box-title"><strong>Drinks Table</strong>
+                            <a href="adddrink" class="btn btn-primary float-end">Add Drink</a>
+                        </h3>
+
+                        @if (session('message'))
+                            <div class="alert alert-success">{{ session('message') }}</div>
+                        @endif
+                        @if (session('denger'))
+                            <div class="alert alert-danger">{{ session('denger') }}</div>
+                        @endif
+
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th class="border-top-0">No.</th>
-                                        <th class="border-top-0"> Drink-Name</th>
-                                        <th class="border-top-0"> Drink-image</th>
-                                        <th class="border-top-0">Drink-Description</th>
-                                        <th class="border-top-0">Drink-Price</th>
-                                        <th class="border-top-0">ACTION</th>
+                                        <th class="border-top-0 text-center"> Category</th>
+                                        <th class="border-top-0 text-center"> Name</th>
+                                        <th class="border-top-0 text-center"> Image</th>
+                                        <th class="border-top-0 text-center"> Description</th>
+                                        <th class="border-top-0 text-center">Price</th>
+                                        <th class="border-top-0 text-end">ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -93,16 +103,19 @@
                                     @foreach ($drinks as $drink)
                                         <tr>
                                             <td>{{ $i++ }}</td>
+                                            <td>{{ $drink->category->category_name }}</td>
                                             <td>{{ $drink->drink_name }}</td>
                                             <td><img src=".\uploads\drink_images\{{ $drink->drink_image }}" alt=""
                                                     width="100px"></td>
                                             <td>{{ $drink->drink_description }}</td>
                                             <td>{{ $drink->drink_price }}</td>
                                             <td>
-                                                <p><button type="button" class="btn btn-light"><a
-                                                            href="">Edit</a></button></p>
-                                                <p><button type="button" class="btn btn-danger"><a
-                                                            href="">Delete</a></button></p>
+                                                <a href="editdrink/{{ $drink->id }}"
+                                                    class="btn btn-primary">Edit</a></button>
+                                            </td>
+                                            <td>
+                                                <a href="/deletedrink/{{ $drink->id }}"
+                                                    class="btn btn-danger">Delete</a></button>
                                             </td>
                                         </tr>
                                     @endforeach

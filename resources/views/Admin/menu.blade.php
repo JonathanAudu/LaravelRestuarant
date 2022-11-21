@@ -93,7 +93,7 @@
                                         <th class="border-top-0 text-center"> Image</th>
                                         <th class="border-top-0 text-center">Description</th>
                                         <th class="border-top-0 text-center">Price</th>
-                                        <th class="border-top-0 text-end">Action</th>
+                                        <th class="border-top-0 text-end">ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -110,12 +110,11 @@
                                             <td>{{ $menu->item_description }}</td>
                                             <td>${{ $menu->price }}</td>
                                             <td>
-                                                <a href="editmenu/{{ $menu->i
-                                                d }}"
+                                                <a href="editmenu/{{ $menu->id }}"
                                                     class="btn btn-primary">Edit</a></button>
                                             </td>
                                             <td>
-                                                <a href="deleteMenu/{{ $menu->id }}" class="btn btn-danger">Delete</a></button>
+                                                <a href="/menu/delete/{{ $menu->id }}" class="btn btn-danger">Delete</a></button>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -83,8 +83,8 @@ class MenuController extends Controller
     public function edit(Menu $menu, $id)
     {
         $categories = Category::all();
-        $menus = Menu::findorfail($id);
-        return view('Admin.editmenu', compact('categories', 'menus'));
+        $menu = Menu::findorfail($id);
+        return view('Admin.editmenu', compact('categories', 'menu'));
     }
 
     /**
@@ -104,7 +104,7 @@ class MenuController extends Controller
         $menu->menu_image = $request->menu_image;
         $menu->price = $request->price;
         $menu->save();
-        return redirect('Menu')->with('message', 'Deleted');
+        return redirect('Menu')->with('message', 'Item Updated');
     }
 
     /**
@@ -118,6 +118,6 @@ class MenuController extends Controller
         $menu = Menu::find($id);
         $menu->delete();
 
-        return redirect('Menu')->with('denger', 'Deleted');
+        return redirect('Menu')->with('denger', 'Item Deleted');
     }
 }

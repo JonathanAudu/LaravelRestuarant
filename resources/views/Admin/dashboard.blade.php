@@ -28,33 +28,34 @@
                     </div>
                 </div>
                 <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-12">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-4 col-md-12 ">
                             <div class="white-box analytics-info bg-success">
                                 <h3 class="box-title">USERS</h3>
                                 <ul class="list-inline two-part d-flex align-items-center mb-0">
                                     <li>
                                         <div>
-                                            <i class="far fa-address-book  " aria-hidden="true"> ALL USERS </i>
+                                            <i class="far fa-address-book  " aria-hidden="true"> TOTAL USERS </i>
                                         </div>
                                     </li>
                                     <li class="ms-auto">
-                                        <span class="counter text-dark">659</span>
+                                        <span class="counter text-dark">{{$users}}</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+                        
                         <div class="col-lg-4 col-md-12">
                             <div class="white-box analytics-info bg-primary">
                                 <h3 class="box-title">MENUS</h3>
                                 <ul class="list-inline two-part d-flex align-items-center mb-0">
                                     <li>
                                         <div>
-                                            <i class="fas fa-list-ul  " aria-hidden="true"> MENU ITEMS </i>
+                                            <i class="fas fa-list-ul  " aria-hidden="true"> TOTAL MENU ITEMS </i>
                                         </div>
                                     </li>
                                     <li class="ms-auto">
-                                        <span class="counter text-dark">869</span>
+                                        <span class="counter text-dark">{{$menus}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -66,12 +67,29 @@
                                     <li>
                                     <li>
                                         <div>
-                                            <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES </i>
+                                            <i class="fas fa-coffee " aria-hidden="true"> TOTAL DRINKS </i>
                                         </div>
                                     </li>
                                     </li>
                                     <li class="ms-auto">
-                                        <span class="counter text-dark">911</span>
+                                        <span class="counter text-dark">{{$drinks}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="white-box analytics-info bg-secondary">
+                                <h3 class="box-title">CATEGORIES</h3>
+                                <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                    <li>
+                                    <li>
+                                        <div>
+                                            <i class="fa fa-table " aria-hidden="true"> TOTAL CATEGORIES </i>
+                                        </div>
+                                    </li>
+                                    </li>
+                                    <li class="ms-auto">
+                                        <span class="counter text-dark">{{$categories}}</span>
                                     </li>
                                 </ul>
                             </div>

@@ -75,7 +75,7 @@
                     <div class="card-body ">
                         <h3 class="box-title text-center"><strong>UPDATE DRINK LIST</strong> <a href="../Drink"
                                 class="btn btn-primary float-end pt-1">Go Back</a></h3>
-                        <form action="/updatedrink/{{ $drink->id }}" method="POST" enctype="multipart/form-data">
+                        <form action="/updatedrink/{{ $drinks->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -83,7 +83,7 @@
                                 <div class="col-sm-10">
                                     <select class="form-select" name="category_id">
                                         @foreach ($categories as $category)
-                                            <option value="{{$category->id}}" {{$drink->category_id == $category->id ? 'selected':''}}> {{$category->category_name}}</option>
+                                            <option value="{{$category->id}}" {{$drinks->category_id == $category->id ? 'selected':''}}> {{$category->category_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -92,7 +92,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>DRINK-NAME</strong></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="drink_name" value="{{ $drink->drink_name }}" placeholder=""
+                                    <input type="text" name="drink_name" value="{{ $drinks->drink_name }}" placeholder=""
                                         class="form-control">
                                 </div>
                             </div>
@@ -100,28 +100,27 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>DRINK-DESCRIPTION</strong></label>
                                 <div class="col-sm-10">
-                                    <textarea rows="5" name="drink_description" class="form-control p-2 border-2">{{ $drink->drink_description }}</textarea>
+                                    <textarea rows="5" name="drink_description" class="form-control p-2 border-2">{{ $drinks->drink_description }}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-2">
-                                    <img src="..\uploads\menu_images\{{ $drink->drink_image }}" alt="" height="100px"
+                                    <img src="..\uploads\drink_images\{{ $drinks->drink_image }}" alt="" height="100px"
                                         width="100px">
-                                    <input type="text" name="menu_image" id="" value="{{ $drink->drink_image }} "
-                                        hidden>
+                                    <input type="text" name="drink_image" id="" value="{{ $drinks->drink_image }} "  hidden>
                                 </div>
                                 <div class="col-sm-10">
                                     <label class="col-sm-2 col-form-label"><strong>DRINK-IMAGE</strong></label>
                                     <input type="file" name="drink_image" class="form-control"
-                                        value="{{ $drink->drink_image }}">
+                                        value="{{ $drinks->drink_image }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label"><strong>PRICE</strong></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="drink_price" value="{{ $drink->drink_price }}" class="form-control">
+                                    <input type="text" name="drink_price" value="{{ $drinks->drink_price }}" class="form-control">
                                 </div>
                             </div>
 

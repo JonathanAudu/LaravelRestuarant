@@ -37,6 +37,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
 
+    // HOME ROUTES
     Route::get('dashboard', [HomeController::class, 'display']);
 
     // MENU ROUTES

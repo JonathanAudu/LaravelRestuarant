@@ -46,7 +46,7 @@ class DrinkController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $categories = Category::findorfail($request->category_id);
         if ($request->drink_image) {
          $file_name = 'drink_img-' . time() . '.' . $request->drink_image->extension();
@@ -85,7 +85,7 @@ class DrinkController extends Controller
     {
         $categories = Category::all();
         $drinks = Drink::findorfail($id);
-        return view('Admin.adddrink', compact('categories', 'drinks'));
+        return view('Admin.editdrink', compact('categories', 'drinks'));
     }
 
     /**
@@ -118,6 +118,6 @@ class DrinkController extends Controller
     {
         $drink = Drink::find($id);
         $drink->delete();
-        return redirect('/Drink')->with('message', 'ddrink deleted');
+        return redirect('/Drink')->with('message', 'drink deleted');
     }
 }

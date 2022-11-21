@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Drink;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -25,6 +26,14 @@ class HomeController extends Controller
         return view('Admin.dashboard',compact('users','menus', 'drinks', 'categorys'));
     }
 
+    public function countDisplay(){
+        $categories = Category::count();
+        $drinks = Drink::count();
+        $menus = Menu::count();
+        $users = User::where('user_role', '0')->count();
+
+       return view('Admin.dashboard', compact('categories','users','menus', 'drinks'));
+    }
 
 }
 

@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Menu;
+use App\Models\User;
+use App\Models\Drink;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 
 class CategoryController extends Controller
 {
@@ -15,8 +19,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categorys = Category::all()->paginate(5);
-        return view('Admin.categories', compact('categorys'));
+
+        $drinks = Drink::all();
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
+        return view('Admin.categories', compact('users','menus', 'drinks', 'categorys'));
     }
 
     /**
@@ -26,7 +34,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('Admin.addcategory');
+        $drinks = Drink::all();
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
+        return view('Admin.addcategory', compact('users','menus', 'drinks', 'categorys'));
     }
 
     /**
@@ -68,8 +80,12 @@ class CategoryController extends Controller
      */
     public function edit(Category $category, $id)
     {
+        $drinks = Drink::all();
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
         $category = Category::find($id);
-        return view('Admin.editcategory', compact('category'));
+        return view('Admin.editcategory', compact('category', 'users','menus', 'drinks', 'categorys'));
     }
 
     /**

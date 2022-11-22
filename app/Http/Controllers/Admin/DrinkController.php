@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Menu;
+use App\Models\User;
 use App\Models\Drink;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -23,8 +25,11 @@ class DrinkController extends Controller
      */
     public function index()
     {
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
         $drinks = Drink::all();
-        return view('Admin.drinks', compact('drinks'));
+        return view('Admin.drinks', compact('users','menus', 'drinks', 'categorys'));
     }
 
     /**
@@ -34,8 +39,12 @@ class DrinkController extends Controller
      */
     public function create()
     {
+        $drinks = Drink::all();
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
         $categories = Category::all();
-        return view('Admin.adddrink', compact('categories'));
+        return view('Admin.adddrink', compact('users','menus', 'drinks','categories','categorys','categorys'));
     }
 
     /**
@@ -83,9 +92,12 @@ class DrinkController extends Controller
      */
     public function edit(Drink $drinks, $id)
     {
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
         $categories = Category::all();
         $drinks = Drink::findorfail($id);
-        return view('Admin.editdrink', compact('categories', 'drinks'));
+        return view('Admin.editdrink', compact('users','menus','categories', 'drinks', 'categorys'));
     }
 
     /**

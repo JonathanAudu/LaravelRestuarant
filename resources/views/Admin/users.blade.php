@@ -155,59 +155,16 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-12">
-                    <div class="white-box analytics-info bg-success">
-                        <h3 class="box-title">USERS</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div>
-                                    <i class="far fa-address-book   " aria-hidden="true"> ALL USERS</i>
-                                </div>
-                            </li>
-                            <li class="ms-auto">
-                                <span class="counter text-dark">659</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="white-box analytics-info bg-primary">
-                        <h3 class="box-title">MENUS</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div>
-                                    <i class="fas fa-list-ul  " aria-hidden="true"> MENU ITEMS</i>
-                                </div>
-                            </li>
-                            <li class="ms-auto">
-                                <span class="counter text-dark">869</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="white-box analytics-info bg-warning">
-                        <h3 class="box-title">DRINKS</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                            <li>
-                                <div>
-                                    <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES</i>
-                                </div>
-                            </li>
-                            </li>
-                            <li class="ms-auto">
-                                <span class="counter text-dark">911</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+           
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
                         <h3 class="box-title"><strong>Users Table</strong></h3>
+
+                        @if (session('denger'))
+                            <div class="alert alert-danger">{{ session('denger') }}</div>
+                        @endif
+
                         <div class="table-responsive">
                             <table class="table text-nowrap">
                                 <thead>
@@ -216,6 +173,7 @@
                                         <th class="border-top-0">Username</th>
                                         <th class="border-top-0">Emails</th>
                                         <th class="border-top-0">Phone Numbers</th>
+                                        <th class="border-top-0">ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -228,6 +186,10 @@
                                             <td>{{ $user->username }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->phone_number }}</td>
+                                            <td>
+                                                <a href="/deleteuser/{{ $user->id }}"
+                                                    class="btn btn-danger">Delete</a></button>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

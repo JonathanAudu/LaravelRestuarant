@@ -36,6 +36,10 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
+    // USER ROUTE
+    Route::get('/deleteuser/{id}', [UserController::class, 'destroy']);
+
+
 
     // HOME ROUTES
     Route::get('dashboard', [HomeController::class, 'display']);
@@ -58,7 +62,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('/adddrink', [DrinkController::class, 'store']);
     Route::get('/editdrink/{id}', [DrinkController::class, 'edit'])->name('editdrink');
     Route::post('/updatedrink/{id}', [DrinkController::class, 'update']);
-    Route::post('/deletedrink/{id}', [DrinkController::class, 'destroy']);
+    Route::get('/deletedrink/{id}', [DrinkController::class, 'destroy']);
 
 
     // CATEGORY ROUTE

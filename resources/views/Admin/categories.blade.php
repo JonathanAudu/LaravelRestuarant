@@ -18,101 +18,52 @@
 
             <div class="row">
                 <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="white-box analytics-info bg-success">
-                                <h3 class="box-title">USERS</h3>
-                                <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                    <li>
-                                        <div>
-                                            <i class="far fa-address-book   " aria-hidden="true"> ALL USERS</i>
-                                        </div>
-                                    </li>
-                                    <li class="ms-auto">
-                                        <span class="counter text-dark">659</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="white-box analytics-info bg-primary">
-                                <h3 class="box-title">MENUS</h3>
-                                <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                    <li>
-                                        <div>
-                                            <i class="fas fa-list-ul  " aria-hidden="true"> MENU ITEMS</i>
-                                        </div>
-                                    </li>
-                                    <li class="ms-auto">
-                                        <span class="counter text-dark">869</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="white-box analytics-info bg-warning">
-                                <h3 class="box-title">DRINKS</h3>
-                                <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                    <li>
-                                    <li>
-                                        <div>
-                                            <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES</i>
-                                        </div>
-                                    </li>
-                                    </li>
-                                    <li class="ms-auto">
-                                        <span class="counter text-dark">911</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="white-box">
-                        <h3 class="box-title"><strong>CATEGORY DETAILS</strong>
-                            <a href="/addcategory" class="btn btn-primary float-end">Add Categories</a>
-                        </h3>
+                    
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title"><strong>CATEGORY DETAILS</strong>
+                                <a href="/addcategory" class="btn btn-primary float-end">Add Categories</a>
+                            </h3>
 
-                        @if (session('message'))
-                            <div class="alert alert-success">{{ session('message') }}</div>
-                        @endif
+                            @if (session('message'))
+                                <div class="alert alert-success">{{ session('message') }}</div>
+                            @endif
 
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th class="border-top-0 ">No.</th>
-                                        <th class="border-top-0 text-center">Category Name</th>
-                                        <th class="border-top-0 text-end">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($categorys as $category)
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
                                         <tr>
-                                            <td>{{ $i++ }}</td>
-                                            <td class="text-center">{{ $category->category_name }}</td>
-                                            <td class="text-end">
-                                                <button type="button" class="btn btn-light"><a
-                                                        href="editcategory/{{ $category->id }}"> EDIT </a></button>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-danger"><a
-                                                        href="deleteCategory/{{ $category->id }}">DELETE</a></button>
-
-                                            </td>
+                                            <th class="border-top-0 ">No.</th>
+                                            <th class="border-top-0 text-center">Category Name</th>
+                                            <th class="border-top-0 text-end">Action</th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @php
+                                            $i = 1;
+                                        @endphp
+                                        @foreach ($categorys as $category)
+                                            <tr>
+                                                <td>{{ $i++ }}</td>
+                                                <td class="text-center">{{ $category->category_name }}</td>
+                                                <td class="text-end">
+                                                    <button type="button" class="btn btn-light"><a
+                                                            href="editcategory/{{ $category->id }}"> EDIT </a></button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger"><a
+                                                            href="deleteCategory/{{ $category->id }}">DELETE</a></button>
+
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <footer class="footer text-center">2021 © JonLee Admin</footer>
         </div>
-        <footer class="footer text-center">2021 © JonLee Admin</footer>
-    </div>
-@endsection
+    @endsection

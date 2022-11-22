@@ -19,61 +19,14 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-12">
-                    <div class="white-box analytics-info bg-success">
-                        <h3 class="box-title">USERS</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div>
-                                    <i class="far fa-address-book   " aria-hidden="true"> ALL USERS</i>
-                                </div>
-                            </li>
-                            <li class="ms-auto">
-                                <span class="counter text-dark">659</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="white-box analytics-info bg-primary">
-                        <h3 class="box-title">MENUS</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div>
-                                    <i class="fas fa-list-ul  " aria-hidden="true"> MENU ITEMS</i>
-                                </div>
-                            </li>
-                            <li class="ms-auto">
-                                <span class="counter text-dark">869</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="white-box analytics-info bg-warning">
-                        <h3 class="box-title">DRINKS</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                            <li>
-                                <div>
-                                    <i class="fas fa-coffee " aria-hidden="true"> COCKTAILS $ WINES</i>
-                                </div>
-                            </li>
-                            </li>
-                            <li class="ms-auto">
-                                <span class="counter text-dark">911</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            
 
 
             <div class="col-lg-10 col-xlg-9 col-md-12 mx-auto">
                 <div class="card ">
                     <div class="card-body ">
-                        <h3 class="box-title text-center"><strong>UPDATE CATEGORY</strong> </h3>
+                        <h3 class="box-title text-center"><strong>UPDATE CATEGORY</strong><a href="../Category"
+                            class="btn btn-primary float-end pt-1">Go Back</a></h3>
                         <form action="{{ '/updatecategory' }}" method="POST">
                             @csrf
 

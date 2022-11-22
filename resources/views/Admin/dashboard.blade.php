@@ -39,12 +39,12 @@
                                         </div>
                                     </li>
                                     <li class="ms-auto">
-                                        <span class="counter text-dark">{{$users}}</span>
+                                        <span class="counter text-dark">{{$users->count()}}</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-4 col-md-12">
                             <div class="white-box analytics-info bg-primary">
                                 <h3 class="box-title">MENUS</h3>
@@ -55,7 +55,7 @@
                                         </div>
                                     </li>
                                     <li class="ms-auto">
-                                        <span class="counter text-dark">{{$menus}}</span>
+                                        <span class="counter text-dark">{{$menus->count()}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -72,7 +72,7 @@
                                     </li>
                                     </li>
                                     <li class="ms-auto">
-                                        <span class="counter text-dark">{{$drinks}}</span>
+                                        <span class="counter text-dark">{{$drinks->count()}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -89,7 +89,7 @@
                                     </li>
                                     </li>
                                     <li class="ms-auto">
-                                        <span class="counter text-dark">{{$categories}}</span>
+                                        <span class="counter text-dark">{{$categorys->count()}}</span>
                                     </li>
                                 </ul>
                             </div>

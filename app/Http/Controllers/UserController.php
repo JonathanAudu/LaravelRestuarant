@@ -12,7 +12,15 @@ class UserController extends Controller
         return view('Admin.users', compact('users'));
     }
 
-    
+    public function destroy(User $users, $id)
+    {
+        $users = User::find($id);
+        $users->delete();
+
+        return redirect('users')->with('denger', 'User Deleted');
+    }
+
+
 }
 
 

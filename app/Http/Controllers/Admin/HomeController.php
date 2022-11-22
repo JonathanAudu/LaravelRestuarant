@@ -26,14 +26,6 @@ class HomeController extends Controller
         return view('Admin.dashboard',compact('users','menus', 'drinks', 'categorys'));
     }
 
-    public function countDisplay(){
-        $categories = Category::count();
-        $drinks = Drink::count();
-        $menus = Menu::count();
-        $users = User::where('user_role', '0')->count();
-
-       return view('Admin.dashboard', compact('categories','users','menus', 'drinks'));
-    }
 
 }
 

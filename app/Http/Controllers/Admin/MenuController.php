@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Menu;
 use App\Models\User;
+use App\Models\Drink;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 
 class MenuController extends Controller
 {
@@ -24,8 +25,11 @@ class MenuController extends Controller
     public function index()
     {
 
+        $drinks = Drink::all();
+        $users = User::all();
         $menus = Menu::all();
-        return view('Admin.menu', compact('menus'));
+        $categorys = Category::all();
+        return view('Admin.menu', compact('users','menus', 'drinks', 'categorys'));
     }
 
     /**
@@ -35,8 +39,12 @@ class MenuController extends Controller
      */
     public function create()
     {
+        $drinks = Drink::all();
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
         $categories = Category::all();
-        return view('Admin.addmenu', compact('categories'));
+        return view('Admin.addmenu', compact('users','menus', 'drinks', 'categorys','categories'));
     }
 
     /**
@@ -82,9 +90,13 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu, $id)
     {
+        $drinks = Drink::all();
+        $users = User::all();
+        $menus = Menu::all();
+        $categorys = Category::all();
         $categories = Category::all();
         $menu = Menu::findorfail($id);
-        return view('Admin.editmenu', compact('categories', 'menu'));
+        return view('Admin.editmenu', compact('categories', 'menu', 'users','menus', 'drinks', 'categorys'));
     }
 
     /**

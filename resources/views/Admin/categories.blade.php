@@ -18,7 +18,7 @@
 
             <div class="row">
                 <div class="container-fluid">
-                    
+
                     <div class="col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title"><strong>CATEGORY DETAILS</strong>
@@ -52,7 +52,7 @@
                                                 </td>
                                                 <td>
                                                     <button type="button" class="btn btn-danger"><a
-                                                            href="deleteCategory/{{ $category->id }}">DELETE</a></button>
+                                                            href="category/delete/{{ $category->id }}">DELETE</a></button>
 
                                                 </td>
                                             </tr>

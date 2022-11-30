@@ -79,9 +79,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('/addcategory', [CategoryController::class, 'store']);
     Route::get('/editcategory/{id}', [CategoryController::class, 'edit'])->name('editcategory');
     Route::post('/updatecategory', [CategoryController::class, 'update']);
+<<<<<<< HEAD
     Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('deleteCategory');
 
 
     // RESERVATION ROUTE
     Route::get('Reservation', [ReservationController::class, 'index']);
+=======
+    Route::get('category/delete/{id}', [CategoryController::class, 'destroy'])->name('deleteCategory');
+>>>>>>> 64a3c3d28694c5d913c598c7de478f42facc0c2f
 });

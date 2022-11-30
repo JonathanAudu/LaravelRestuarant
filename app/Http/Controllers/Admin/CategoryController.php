@@ -113,10 +113,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category, $id)
+    public function destroy(Category $categorys, $id)
     {
-        $category = Category::find($id);
-        $category->delete();
+        $categorys = Category::find($id);
+        $categorys->delete();
 
         return view('Admin.categories')->with('message', ' Deleted successful');
     }

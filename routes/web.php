@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\DrinkController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,9 @@ use App\Http\Controllers\Admin\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('Home');
-});
+// Route::get('/', function () {
+//     return view('Home');
+// });
 // Register Route
 Route::get('registerpage', [AuthController::class, 'registerPage']);
 Route::post('register', [AuthController::class, 'register']);
@@ -34,10 +35,17 @@ Route::post('login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 // Route::get('/dashboard', [UserController::class, 'dashboardUsers']);
 
+// RESERVATION ROUTE
+Route::post('/reservation', [UserController::class, 'reservation']);
+
+// USER ROUTE
+Route::get('/', [UserController::class, 'display']);
+
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     // USER ROUTE
     Route::get('/deleteuser/{id}', [UserController::class, 'destroy']);
+
 
 
 
@@ -72,4 +80,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/editcategory/{id}', [CategoryController::class, 'edit'])->name('editcategory');
     Route::post('/updatecategory', [CategoryController::class, 'update']);
     Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('deleteCategory');
+
+
+    // RESERVATION ROUTE
+    Route::get('Reservation', [ReservationController::class, 'index']);
 });

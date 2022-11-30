@@ -118,6 +118,14 @@
                         </li>
 
                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Reservation"
+                                aria-expanded="false">
+                                <i class="fa fa-archive" aria-hidden="true"></i>
+                                <span class="hide-menu">RESERVATIONS</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
                                 aria-expanded="false">
                                 <i class="fas fa-tablet-alt" aria-hidden="true"></i>

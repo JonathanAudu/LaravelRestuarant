@@ -28,10 +28,74 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1000;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Trigger/Open The Modal -->
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus necessitatibus
+                cum unde quas aliquid deleniti molestias. Earum, corrupti aliquid voluptatum quidem doloremque molestias
+                inventore asperiores mollitia, et enim facere! Quam vel ea, ullam tempora cupiditate suscipit fugiat?
+                Corrupti, minus hic?</p>
+        </div>
+
+    </div>
     <!-- ======= Top Bar ======= -->
     <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
         <div
@@ -86,10 +150,7 @@
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <h2 class="animate__animated animate__fadeInDown"><span>Delicious</span> Restaurant</h2>
-                                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                    aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                    mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                    vel. Minus et tempore modi architecto.</p>
+                                <p class="animate__animated animate__fadeInUp"></p>
                                 <div>
                                     <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our
                                         Menu</a>
@@ -104,11 +165,8 @@
                     <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                    aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                    mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                    vel. Minus et tempore modi architecto.</p>
+                                <h2 class="animate__animated animate__fadeInDown"><span>Custom</span> Parties</h2>
+                                <p class="animate__animated animate__fadeInUp"></p>
                                 <div>
                                     <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our
                                         Menu</a>
@@ -123,13 +181,11 @@
                     <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                    aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                    mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                    vel. Minus et tempore modi architecto.</p>
+                                <h2 class="animate__animated animate__fadeInDown"><span>Everyday</span> Deliciousness
+                                </h2>
                                 <div>
-                                    <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our
+                                    <a href="#menu"
+                                        class="btn-menu animate__animated animate__fadeInUp scrollto">Our
                                         Menu</a>
                                     <a href="#book-a-table"
                                         class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
@@ -154,53 +210,6 @@
 
     <main id="main">
 
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
-            <div class="container-fluid">
-
-                <div class="row">
-
-                    <div class="col-lg-5">
-                        <img src="assets\img\istockphoto-1081422898-612x612.jpg" class="venobox mb-4 mt-4">
-                    </div>
-
-                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
-
-                        <div class="content">
-                            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                            </p>
-                            <p class="fst-italic">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore
-                                magna aliqua.
-                            </p>
-                            <ul>
-                                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</li>
-                                <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in
-                                    voluptate velit.</li>
-                                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                    storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                            </ul>
-                            <p>
-                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End About Section -->
 
         <!-- ======= Whu Us Section ======= -->
         <section id="why-us" class="why-us">
@@ -208,8 +217,10 @@
 
                 <div class="section-title">
                     <h2>Why choose <span>Our Restaurant</span></h2>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
+                    <p>A stunning combination of contemporary American fare with Italian influences, <strong>Merilyn
+                            Restuarant</strong> in Abuja Wuse 2, creates a dining experience that is deliciously
+                        familiar yet refined and innovative. With elegant indoor and outdoor dining, genuine hospitality
+                        and exquisite food. Merilyn Restuarant boasts it all.</p>
                 </div>
 
                 <div class="row">
@@ -217,27 +228,25 @@
                     <div class="col-lg-4">
                         <div class="box">
                             <span>01</span>
-                            <h4>Lorem Ipsum</h4>
-                            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero
-                                placeat</p>
+                            <h4>MENU</h4>
+                            <p>Delight in prime steaks, homemade pastas, fresh salads, and exquisite seafood.</p>
                         </div>
                     </div>
 
                     <div class="col-lg-4 mt-4 mt-lg-0">
                         <div class="box">
                             <span>02</span>
-                            <h4>Repellat Nihil</h4>
-                            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
-                                leno para dest</p>
+                            <h4>DRINKS</h4>
+                            <p>An eclectic wine list and a knowledgeable staff make for perfect pairings.</p>
                         </div>
                     </div>
 
                     <div class="col-lg-4 mt-4 mt-lg-0">
                         <div class="box">
                             <span>03</span>
-                            <h4> Ad ad velit qui</h4>
-                            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam
-                                quis</p>
+                            <h4> OUR SPACE</h4>
+                            <p>Join us in our large indoor dining area or al fresco on our outdoor terrace for daily
+                                lunch and dinner service and Sunday brunch.</p>
                         </div>
                     </div>
 
@@ -251,105 +260,38 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Check our tasty <span>Menu</span></h2>
+                    <h2>Check our tasty <span>Menus</span></h2>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="menu-flters">
                             <li data-filter="*" class="filter-active">Show All</li>
-                            <li data-filter=".filter-starters">Starters</li>
-                            <li data-filter=".filter-salads">Salads</li>
-                            <li data-filter=".filter-specialty">Specialty</li>
+                            <li data-filter=".filter-menus">Menus</li>
+                            <li data-filter=".filter-drinks">Drinks</li>
+                            {{-- <li data-filter=".filter-specialty">Specialty</li> --}}
                         </ul>
                     </div>
                 </div>
+                @foreach ($menus as $menu)
+                    <div class="row menu-container">
 
-                <div class="row menu-container">
+                        <div class="col-lg-6 menu-item filter-starters"
+                            style="align-items: center; display: flex; justify-content: space-between">
+                            <div style="flex-direction: column; display: flex; align-items: center">
 
-                    <div class="col-lg-6 menu-item filter-starters">
-                        <div class="menu-content">
-                            <a href="#">Lobster Bisque</a><span>$5.95</span>
+                                <img src="..\uploads\menu_images\{{ $menu->menu_image }}" alt=""
+                                    width="150px">
+                                <span
+                                    style="font-weight: 900; font-size: 20px; color: #ffb03b">{{ $menu->menu_item }}</span>
+                            </div>
+                            <div class="menu-ingredients">
+                                <p style="font-size: 20px; font-weight: 900 "><span>${{ $menu->price }}</span></p>
+                            </div>
                         </div>
-                        <div class="menu-ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </div>
+
                     </div>
-
-                    <div class="col-lg-6 menu-item filter-specialty">
-                        <div class="menu-content">
-                            <a href="#">Bread barrel</a><span>$6.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 menu-item filter-starters">
-                        <div class="menu-content">
-                            <a href="#">Crab Cake</a><span>$7.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 menu-item filter-salads">
-                        <div class="menu-content">
-                            <a href="#">Caesar Selections</a><span>$8.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 menu-item filter-specialty">
-                        <div class="menu-content">
-                            <a href="#">Tuscan Grilled</a><span>$9.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 menu-item filter-starters">
-                        <div class="menu-content">
-                            <a href="#">Mozzarella Stick</a><span>$4.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            Lorem, deren, trataro, filede, nerada
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 menu-item filter-salads">
-                        <div class="menu-content">
-                            <a href="#">Greek Salad</a><span>$9.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            Fresh spinach, crisp romaine, tomatoes, and Greek olives
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 menu-item filter-salads">
-                        <div class="menu-content">
-                            <a href="#">Spinach Salad</a><span>$9.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 menu-item filter-specialty">
-                        <div class="menu-content">
-                            <a href="#">Lobster Roll</a><span>$12.95</span>
-                        </div>
-                        <div class="menu-ingredients">
-                            Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-                        </div>
-                    </div>
-
-                </div>
-
+                @endforeach
             </div>
         </section><!-- End Menu Section -->
 
@@ -591,63 +533,55 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Book a <span>Table</span></h2>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
+                    <h2>Table <span>Reservation</span></h2>
+                    <p> Merilyn Delicious provides a sophisticated setting, flawless service and inspired cuisine
+                        combined to
+                        create the perfect venue for your next social or corporate event. Let us host your next occasion
+                        customized to your group size, occasion, and menu preference.</p>
                 </div>
 
-                <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+                <form action="{{ '/reservation' }}" method="post" class="">
+                    @csrf
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name"
-                                placeholder="Your Name" data-rule="minlen:4"
-                                data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-                            <div class="validate"></div>
+                            <input type="email" class="form-control" name="email" placeholder="Your Email">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                            <input type="text" class="form-control" name="phone" id="phone"
-                                placeholder="Your Phone" data-rule="minlen:4"
-                                data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                            <input type="tel" class="form-control" name="phone_number"
+                                placeholder="Your Phone Number">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
-                            <input type="text" name="date" class="form-control" id="date"
-                                placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                            <input type="date" name="date" class="form-control" placeholder="Date">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
-                            <input type="text" class="form-control" name="time" id="time"
-                                placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                            <input type="time" class="form-control" name="time" placeholder="Time">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
-                            <input type="number" class="form-control" name="people" id="people"
-                                placeholder="# of people" data-rule="minlen:1"
-                                data-msg="Please enter at least 1 chars">
-                            <div class="validate"></div>
+                            <input type="number" class="form-control" name="guest"
+                                placeholder="Number of guests">
                         </div>
                     </div>
                     <div class="form-group mt-3">
                         <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-                        <div class="validate"></div>
                     </div>
-                    <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your booking request was sent. We will call back or send an Email to
-                            confirm your reservation. Thank you!</div>
+                    <div class="text-center">
+                        <button type="submit" class="btn mt-3"
+                            style="height: 50px; background-color: #ffb03b; border-radius: 50px; font-weight: 400;"><b>
+                                Make Reservation</b></button>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
                 </form>
 
             </div>
-        </section><!-- End Book A Table Section -->
+        </section>
 
+        @if (session('success'))
+            <div class="alert alert-info" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <!-- ======= Gallery Section ======= -->
         <section id="gallery" class="gallery">
             <div class="container-fluid">
@@ -692,15 +626,15 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-4">
+                    {{-- <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
                             <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
                                 <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="col-lg-3 col-md-4">
+                    {{-- <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
                             <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
                                 <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
@@ -714,15 +648,15 @@
                                 <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="col-lg-3 col-md-4">
+                    {{-- <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
                             <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
                                 <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -837,6 +771,35 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("modal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 
